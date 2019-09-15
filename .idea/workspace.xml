@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0236758e-7270-4ceb-a72e-d116c0a1bf79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Alert/Alert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Alert/Alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Button/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Button/Button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Logo/Logo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Logo/Logo.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/PageTitle/PageTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/PageTitle/PageTitle.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/SectionTitle/SectionTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/SectionTitle/SectionTitle.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/SmallTitle/SmallTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/SmallTitle/SmallTitle.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Spinner/Spinner.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/Spinner/Spinner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/TextField/TextField.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/TextField/TextField.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/layouts/MainLayout/MainLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/layouts/MainMenu/MainMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/layouts/MainMenu/MainMenu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/layouts/PageContainer/PageContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/layouts/PageContainer/PageContainer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Contact/Contact.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Home/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Login/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/PageNotFound/PageNotFound.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/Posts/Posts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/normalize.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/settings.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/styles/typography.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,8 +81,8 @@
                   <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/App.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="363">
-                          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
+                        <state relative-caret-position="181">
+                          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
                           </folding>
@@ -159,7 +126,7 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="true">
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/layouts/MainLayout/MainLayout.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="110">
@@ -167,6 +134,15 @@
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
                           </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file pinned="false" current-in-tab="true">
+                    <entry file="file://$PROJECT_DIR$/client/src/components/pages/Welcome/Welcome.js">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="176">
+                          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
                         </state>
                       </provider>
                     </entry>
@@ -183,7 +159,7 @@
                     <entry file="file://$PROJECT_DIR$/client/src/App.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="66">
-                          <caret line="11" selection-start-line="11" selection-end-line="11" />
+                          <caret line="15" selection-start-line="15" selection-end-line="15" />
                         </state>
                       </provider>
                     </entry>
@@ -328,6 +304,7 @@
         <option value="$PROJECT_DIR$/client/src/components/pages/Contact/Contact.js" />
         <option value="$PROJECT_DIR$/client/src/components/pages/Login/Login.js" />
         <option value="$PROJECT_DIR$/client/src/components/pages/Registration/Registration.js" />
+        <option value="$PROJECT_DIR$/client/src/components/pages/Welcome/Welcome.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.js" />
       </list>
@@ -537,6 +514,14 @@
               <item name="blog-with-users" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="client" type="2674bda8:ScopeViewTreeModel$GroupNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="pages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Welcome" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="blog-with-users" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="client" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="styles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -611,12 +596,12 @@
       <option name="presentableId" value="Default" />
       <updated>1568465452601</updated>
       <workItem from="1568465455932" duration="89000" />
-      <workItem from="1568465564248" duration="17731000" />
+      <workItem from="1568465564248" duration="18908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17820000" />
+    <option name="totallyTimeSpent" value="18997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1335" extended-state="0" />
@@ -832,16 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/layouts/MainLayout/MainLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/pages/Contact/Contact.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -863,10 +838,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/layouts/MainLayout/MainLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/pages/Welcome/Welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="20" column="77" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
+        <state relative-caret-position="181">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
