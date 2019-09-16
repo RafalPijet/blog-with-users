@@ -2,8 +2,8 @@ import React from 'react'
 
 import './Logo.scss';
 
-const Logo = ({ links, location }) => (
-  <h1 className="logo">Blog.app</h1>
+const Logo = ({ image, name }) => (
+  <img className="logo" src={image} alt={name}/>
 );
 
 export default Logo;
