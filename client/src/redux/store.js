@@ -1,9 +1,11 @@
 import {createStore, combineReducers, applyMiddleware, compose} from "redux";
 import posts from './reducers/postsReducer';
+import request from './reducers/requestReducer';
 import thunk from 'redux-thunk';
 
 const reducers = combineReducers({
-    posts
+    posts,
+    request
 });
 
 const store = createStore(reducers, compose(

@@ -1,0 +1,15 @@
+.spinner-main {
+  display: flex;
+  justify-content: center;
+}
+
+.spinner-box {
+  position: relative;
+  margin: 0 6px;
+}
+
+.second-spinner {
+  position: absolute;
+  bottom: -5px;
+  left: -8px;
+}

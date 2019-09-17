@@ -5,6 +5,8 @@ import {Provider} from 'react-redux';
 import store from './redux/store';
 import App from './App';
 import './styles/global.scss';
+import 'animate.css/animate.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Root = () => (
     <Provider store={store}>
@@ -12,7 +14,7 @@ const Root = () => (
             <App/>
         </BrowserRouter>
     </Provider>
-    
+
 );
 
 
