@@ -8,8 +8,8 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.get('/api/posts', (req, res) => {
-   const data = [{id: 1, title: "Test title", content: "Test content"},
-       {id: 2, title: "Second Test title", content: " Second Test content"}];
+   const data = [{id: "1", title: "Test title", content: "Test content"},
+       {id: "2", title: "Second Test title", content: " Second Test content"}];
    res.json(data);
 });
 
