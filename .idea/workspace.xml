@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0236758e-7270-4ceb-a72e-d116c0a1bf79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/common/HtmlBox/HtmlBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/common/Spinner/Spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/common/SpinnerRequest/SpinnerRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/common/Spinner/Spinner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/common/SpinnerRequest/SpinnerRequest.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,7 +15,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.31728172">
+    <splitter split-orientation="horizontal" split-proportion="0.40684068">
       <split-first>
         <splitter split-orientation="vertical" split-proportion="0.5">
           <split-first>
@@ -48,16 +41,16 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/client/src/utils/functions.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state>
-                      <caret column="50" selection-start-column="50" selection-end-column="50" />
+                    <state relative-caret-position="22">
+                      <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/client/src/redux/thunks.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="220">
@@ -73,7 +66,7 @@
                 <entry file="file://$PROJECT_DIR$/server/server.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="220">
-                      <caret line="11" column="84" selection-start-line="11" selection-start-column="84" selection-end-line="11" selection-end-column="84" />
+                      <caret line="11" column="188" selection-start-line="11" selection-start-column="188" selection-end-line="11" selection-end-column="188" />
                     </state>
                   </provider>
                 </entry>
@@ -90,8 +83,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/client/src/components/common/HtmlBox/HtmlBox.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="308">
-                      <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+                    <state relative-caret-position="131">
+                      <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
                       <folding>
                         <element signature="e#0#26#0" expanded="true" />
                       </folding>
@@ -108,11 +101,11 @@
           </split-first>
           <split-second>
             <leaf>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/server/server.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="198">
-                      <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+                    <state relative-caret-position="206">
+                      <caret line="10" column="131" selection-start-line="10" selection-start-column="131" selection-end-line="10" selection-end-column="131" />
                     </state>
                   </provider>
                 </entry>
@@ -133,7 +126,7 @@
                 <entry file="file://$PROJECT_DIR$/client/src/components/common/Alert/Alert.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="255">
-                      <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+                      <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
                       <folding>
                         <element signature="e#0#26#0" expanded="true" />
                       </folding>
@@ -141,10 +134,10 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/client/src/components/common/Alert/Alert.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="368">
+                    <state relative-caret-position="122">
                       <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
                     </state>
                   </provider>
@@ -234,7 +227,7 @@
               </split-first>
               <split-second>
                 <leaf>
-                  <file pinned="false" current-in-tab="true">
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/package.json">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="211">
@@ -291,11 +284,11 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="false">
+                  <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="220">
-                          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+                        <state relative-caret-position="242">
+                          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
                           </folding>
@@ -380,7 +373,7 @@
                   <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/Posts/Posts.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="367">
+                        <state relative-caret-position="381">
                           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
@@ -519,7 +512,6 @@
         <option value="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
-        <option value="$PROJECT_DIR$/client/src/utils/functions.js" />
         <option value="$PROJECT_DIR$/client/src/redux/reducers/postsReducer.js" />
         <option value="$PROJECT_DIR$/client/src/config.js" />
         <option value="$PROJECT_DIR$/client/src/components/pages/Posts/PostPage.js" />
@@ -527,8 +519,6 @@
         <option value="$PROJECT_DIR$/client/src/components/features/PostsCounter/PostsCounterContainer.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/PostsList/PostsList.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.scss" />
-        <option value="$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js" />
-        <option value="$PROJECT_DIR$/client/src/components/common/HtmlBox/HtmlBox.js" />
         <option value="$PROJECT_DIR$/client/src/components/common/Spinner/Spinner.js" />
         <option value="$PROJECT_DIR$/client/src/components/common/SpinnerRequest/SpinnerRequest.scss" />
         <option value="$PROJECT_DIR$/client/src/components/common/SpinnerRequest/SpinnerRequest.js" />
@@ -541,9 +531,12 @@
         <option value="$PROJECT_DIR$/client/src/components/features/Posts/Posts.js" />
         <option value="$PROJECT_DIR$/client/src/redux/thunks.js" />
         <option value="$PROJECT_DIR$/client/src/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/common/Alert/Alert.js" />
         <option value="$PROJECT_DIR$/client/src/components/common/Alert/Alert.scss" />
+        <option value="$PROJECT_DIR$/client/src/components/common/Alert/Alert.js" />
+        <option value="$PROJECT_DIR$/client/src/components/common/HtmlBox/HtmlBox.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/functions.js" />
+        <option value="$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js" />
       </list>
     </option>
   </component>
@@ -924,12 +917,12 @@
       <option name="presentableId" value="Default" />
       <updated>1568465452601</updated>
       <workItem from="1568465455932" duration="89000" />
-      <workItem from="1568465564248" duration="52637000" />
+      <workItem from="1568465564248" duration="57754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52726000" />
+    <option name="totallyTimeSpent" value="57843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1335" extended-state="0" />
@@ -953,7 +946,7 @@
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19066773" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.15929204" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32984716" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1199,16 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/common/SpinnerRequest/SpinnerRequest.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1216,27 +1199,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/common/HtmlBox/HtmlBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/redux/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/utils/functions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="50" selection-start-column="50" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1280,7 +1246,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/Posts/Posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="381">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1315,9 +1281,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1331,24 +1294,58 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/common/Alert/Alert.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="188" selection-start-line="11" selection-start-column="188" selection-end-line="11" selection-end-column="188" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/common/Alert/Alert.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="122">
           <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/common/HtmlBox/HtmlBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="131">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="48" lean-forward="true" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

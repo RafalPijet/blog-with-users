@@ -23,7 +23,7 @@ const Alert = ({ variant = '', children, ...otherProps }) => {
   };
 
   return (
-    <Animated className="alert-main" animationIn="jackInTheBox" animationOut="fadeOut">
+    <Animated className="alert-main" animationIn="bounceIn" animationOut="fadeOut">
       <div {...otherProps} className={`alert alert--${variant}`}>
         {icon()}
         <span className="alert__desc">{children}</span>
