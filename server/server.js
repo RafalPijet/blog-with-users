@@ -1,18 +1,26 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const config = require('./config');
+const postRouter = require('./routes/post.routes');
+const loadTestData = require('./dataTest');
 
 const app = express();
 
 app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use('/api', postRouter);
 
-app.get('/api/posts', (req, res) => {
-   const data = [{id: "1", title: "Lorem Ipsum", content: "<p>Neque porro quisquam est qui<u> dolorem ipsum quia dolor sit amet</u>, consectetur, adipisci velit</p>"},
-       {id: "2", title: "Lorem Ipsum II", content: "<i>Second Test content<i><b> Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur</b>,<i> adipisci velit </i>"}];
-   res.json(data);
+mongoose.connect(config.DB, {useNewUrlParser: true});
+let db = mongoose.connection;
+db.once('open', () => {
+    console.log("Connected to database");
+    loadTestData();
+});
+db.on('error', err => console.log("Error connection: " + err));
+
+app.listen(config.PORT, () => {
+    console.log(`Server is running on port ${config.PORT}`)
 });
 
-app.listen(7000, () => {
-    console.log('Server is running on port 7000')
-});
