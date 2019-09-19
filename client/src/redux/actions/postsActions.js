@@ -4,10 +4,13 @@ const reducerName = "posts";
 
 // ACTIONS TYPE
 export const LOAD_POSTS = createActionName(reducerName, "LOAD_POSTS");
+export const LOAD_POST = createActionName(reducerName, "LOAD_POST");
 
 // CREATORS OF ACTIONS
 export const loadPosts = payload => ({payload, type: LOAD_POSTS});
+export const loadPost = post => ({post, type: LOAD_POST});
 
 // SELECTORS
-export const getPosts = store => store.posts;
-export const getAmount = store => store.posts.length;
+export const getPosts = store => store.posts.data;
+export const getAmount = store => store.posts.data.length;
+export const getPost = store => store.posts.singlePost;

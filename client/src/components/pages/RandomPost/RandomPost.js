@@ -1,8 +1,9 @@
 import React from 'react';
+import PageTitle from '../../common/PageTitle/PageTitle';
 
 const RandomPost = () => (
     <div>
-        <h2>Random Post</h2>
+        <PageTitle>Random Post</PageTitle>
     </div>
 );
 

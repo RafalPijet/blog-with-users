@@ -1,23 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
 import Button from '../../common/Button/Button';
 import HtmlBox from '../../common/HtmlBox/HtmlBox';
-import {cutText} from "../../../utils/functions";
+import {cutText} from '../../../utils/functions';
+import {FaThumbsDown, FaThumbsUp} from "react-icons/fa";
+import SectionTitle from '../../common/SectionTitle/SectionTitle';
 import './PostSummary.scss';
 
-const PostSummary = ({id, title, content}) => (
+const PostSummary = ({id, title, content, author, votes}) => (
     <article className="post-summary">
         <SmallTitle>{title}</SmallTitle>
-        <HtmlBox>{cutText(content, 60)}</HtmlBox>
-        <Button variant="info">Read More</Button>
+        <div>
+            <span>author: </span>
+            <SectionTitle>{author}</SectionTitle>
+        </div>
+        <HtmlBox>{cutText(content, 80)}</HtmlBox>
+        <Link to={`/posts/${id}`}>
+            <Button variant="info">Read More</Button>
+        </Link>
+        <Button variant="success"><FaThumbsUp/></Button>
+        <span style={{marginRight: '14px'}}>{votes}</span>
+        <Button variant="danger"><FaThumbsDown/></Button>
     </article>
 );
 
 PostSummary.propTypes = {
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired
+    content: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    votes: PropTypes.number.isRequired
 };
 
 export default PostSummary;

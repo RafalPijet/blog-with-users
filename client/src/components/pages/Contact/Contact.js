@@ -1,8 +1,9 @@
 import React from 'react';
+import PageTitle from '../../common/PageTitle/PageTitle';
 
 const Contact = () => (
     <div>
-        <h2>Contact</h2>
+        <PageTitle>Contact</PageTitle>
     </div>
 );
 
