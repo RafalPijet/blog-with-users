@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SmallTitle from '../SmallTitle/SmallTitle';
-import SectionTitle from "../SectionTitle/SectionTitle";
-import HtmlBox from "../HtmlBox/HtmlBox";
-import Button from "../Button/Button";
-import SpinnerRequest from '../SpinnerRequest/SpinnerRequest';
-import Alert from '../Alert/Alert';
+import SmallTitle from '../../common/SmallTitle/SmallTitle';
+import SectionTitle from "../../common/SectionTitle/SectionTitle";
+import HtmlBox from "../../common/HtmlBox/HtmlBox";
+import Button from "../../common/Button/Button";
+import SpinnerRequest from '../../common/SpinnerRequest/SpinnerRequest';
+import Alert from '../../common/Alert/Alert';
 import './PostItem.scss';
 
 class PostItem extends React.Component {
@@ -43,7 +43,6 @@ class PostItem extends React.Component {
         } else if (request.pending && request.success === null) {
             return <SpinnerRequest/>
         } else if (!request.pending && !request.success && request.error !== null) {
-            console.log(request);
             return <Alert variant={request.error.includes("don't exist") ? "warning" : "error"}>
                 {request.error}</Alert>
         } else {

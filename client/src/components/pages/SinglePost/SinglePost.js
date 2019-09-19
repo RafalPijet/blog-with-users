@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageTitle from '../../common/PageTitle/PageTitle';
-import PostItem from '../../common/PostItem/PostItemContainer';
+import PostItem from '../../features/PostItem/PostItemContainer';
 
 const SinglePost = props => {
 
