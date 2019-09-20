@@ -9,7 +9,7 @@ import {FaThumbsDown, FaThumbsUp} from "react-icons/fa";
 import SectionTitle from '../../common/SectionTitle/SectionTitle';
 import './PostSummary.scss';
 
-const PostSummary = ({id, title, content, author, votes}) => (
+const PostSummary = ({id, title, content, author, votes, votesHandling}) => (
     <article className="post-summary">
         <SmallTitle>{title}</SmallTitle>
         <div>
@@ -20,9 +20,9 @@ const PostSummary = ({id, title, content, author, votes}) => (
         <Link to={`/posts/${id}`}>
             <Button variant="info">Read More</Button>
         </Link>
-        <Button variant="success"><FaThumbsUp/></Button>
+        <Button variant="success" onClick={() => votesHandling(id, true)}><FaThumbsUp/></Button>
         <span style={{marginRight: '14px'}}>{votes}</span>
-        <Button variant="danger"><FaThumbsDown/></Button>
+        <Button variant="danger" onClick={() => votesHandling(id, false)}><FaThumbsDown/></Button>
     </article>
 );
 
@@ -31,7 +31,8 @@ PostSummary.propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
-    votes: PropTypes.number.isRequired
+    votes: PropTypes.number.isRequired,
+
 };
 
 export default PostSummary;

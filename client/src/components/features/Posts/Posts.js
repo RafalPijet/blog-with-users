@@ -11,11 +11,17 @@ class Posts extends React.Component {
         loadPosts();
     }
 
+    votesHandling = (id, isUp) => {
+        const {setThumb} = this.props;
+        setThumb(id, isUp);
+    };
+
     render() {
         const {posts, request} = this.props;
+        const {votesHandling} = this;
 
         if (!request.pending && request.success && posts.length > 0) {
-            return <PostsList posts={posts}/>
+            return <PostsList posts={posts} votesHandling={votesHandling}/>
         } else if (request.pending || request.success === null) {
             return <SpinnerRequest/>
         } else if (!request.pending && request.error !== null) {

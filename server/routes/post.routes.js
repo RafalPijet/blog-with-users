@@ -6,5 +6,6 @@ router.route('/posts').get(postController.getPosts);
 router.route('/posts/:id').get(postController.getPost);
 router.route('/posts').post(postController.addPost);
 router.route('/posts').put(postController.updatePost);
+router.route('/posts/:id/:isUp').put(postController.setThumb);
 
 module.exports = router;

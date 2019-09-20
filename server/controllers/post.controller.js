@@ -45,3 +45,21 @@ exports.updatePost = async (req, res) => {
         res.status(500).json(err);
     }
 };
+
+exports.setThumb = async (req, res) => {
+
+    try {
+        const {id, isUp} = req.params;
+        let selectedPost = await Post.findOne({id});
+
+        if (JSON.parse(isUp)) {
+            selectedPost.votes += 1;
+        } else {
+            selectedPost.votes -= 1;
+        }
+        await selectedPost.save();
+        res.status(200).send();
+    } catch (err) {
+        res.status(500).json(err)
+    }
+};
