@@ -31,3 +31,17 @@ exports.addPost = async (req, res) => {
         res.status(500).json(err)
     }
 };
+
+exports.updatePost = async (req, res) => {
+
+    try {
+        let post = await Post.findOne({id: req.body.id});
+        post.title = req.body.title;
+        post.author = req.body.author;
+        post.content = req.body.content;
+        let updatedPost = await post.save();
+        res.status(200).json(updatedPost);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+};

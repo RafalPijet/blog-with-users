@@ -54,3 +54,18 @@ export const addPostRequest = post => {
         }
     }
 };
+
+export const updatePostRequest = post => {
+    return async dispatch => {
+        
+        dispatch(startRequest());
+        
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            await axios.put(`${API_URL}/posts`, post);
+            dispatch(stopRequest());
+        } catch (err) {
+            dispatch(errorRequest(err.message));
+        }
+    }
+}

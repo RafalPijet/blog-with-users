@@ -5,7 +5,7 @@ import PostForm from "../../features/PostForm/PostFormatContainer";
 const AddPost = () => (
     <div>
         <PageTitle>Add post</PageTitle>
-        <PostForm/>
+        <PostForm isEdit={false}/>
     </div>
 );
 

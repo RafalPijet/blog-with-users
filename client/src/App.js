@@ -11,6 +11,7 @@ import Welcome from './components/pages/Welcome/Welcome';
 import AddPost from './components/pages/AddPost/AddPost';
 import RandomPost from './components/pages/RandomPost/RandomPost';
 import SinglePost from './components/pages/SinglePost/SinglePost';
+import EditPost from './components/pages/EditPost/EditPost';
 
 class App extends React.Component {
     state = {
@@ -36,11 +37,12 @@ class App extends React.Component {
                 <MainLayout>
                     <Switch>
                         <Route path="/" exact component={Home}/>
-                        <Route path="/posts/new" exact component={AddPost}/>
                         <Route path="/posts" exact component={PostPage}/>
+                        <Route path="/posts/new" exact component={AddPost}/>
+                        <Route path="/posts/edit" exact component={EditPost}/>
                         <Route path="/posts/random" exact component={RandomPost}/>
-                        <Route path="/contact" exact component={Contact}/>
                         <Route path="/posts/:id" exact component={SinglePost}/>
+                        <Route path="/contact" exact component={Contact}/>
                         <Route component={PageNotFound}/>
                     </Switch>
                 </MainLayout>

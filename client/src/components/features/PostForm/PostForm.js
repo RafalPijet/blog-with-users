@@ -13,11 +13,21 @@ import './PostForm.scss';
 class PostForm extends React.Component {
     state = {
         post: {
+            id: '',
             title: '',
             content: '',
             author: ''
         }
     };
+
+    componentDidMount() {
+        const {isEdit, resetRequest, singlePost} = this.props;
+        resetRequest();
+
+        if (isEdit) {
+            this.setState({post: singlePost});
+        }
+    }
 
     handleChange = event => {
         const {post} = this.state;
@@ -29,30 +39,33 @@ class PostForm extends React.Component {
         this.setState({post: {...post, content: text}})
     };
 
-    addPost = event => {
-        const {addPost} = this.props;
+    sendPost = event => {
+        const {addPost, updatePost, isEdit} = this.props;
         const {post} = this.state;
         event.preventDefault();
-        addPost(post);
+        isEdit ? updatePost(post) : addPost(post);
     };
 
     render() {
         const {title, content, author} = this.state.post;
-        const {handleChange, handleEdit, addPost} = this;
+        const {handleChange, handleEdit, sendPost} = this;
         const {pending, error, success} = this.props.request;
+        const {isEdit, singlePost} = this.props;
 
         if (success) {
-            return <Alert variant="success">Post has been added</Alert>
+            return <Alert variant="success">{`Post has been ${isEdit ? "updated" : "added"}!`}</Alert>
         } else if (error !== null) {
             return <Alert variant="error">{error}</Alert>
+        } else if (Object.entries(singlePost).length === 0 && isEdit) {
+            return <Alert variant="error">No Post to edit!</Alert>
         } else if (pending) {
             return <SpinnerRequest/>
         } else {
             return (
-                <form onSubmit={addPost}>
+                <form onSubmit={sendPost}>
                     <TextField label="Title" onChange={handleChange} value={title} name="title"/>
                     <TextField label="Author" onChange={handleChange} value={author} name="author"/>
-                    <SectionTitle>Add post content</SectionTitle>
+                    <SectionTitle>{`${isEdit ? "Edit" : "Add"} post content`}</SectionTitle>
                     <Editor
                         className="content-editor"
                         onChange={handleEdit}
@@ -62,7 +75,7 @@ class PostForm extends React.Component {
                             toolbar: {buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3']}
                         }}
                     />
-                    <Button variant="primary">Add post</Button>
+                    <Button variant="primary">{`${isEdit ? "Update" : "Add"} post`}</Button>
                 </form>
             )
         }
@@ -70,8 +83,12 @@ class PostForm extends React.Component {
 }
 
 PostForm.propTypes = {
-  request: PropTypes.object.isRequired,
-  addPost: PropTypes.func.isRequired
+    request: PropTypes.object.isRequired,
+    addPost: PropTypes.func.isRequired,
+    resetRequest: PropTypes.func.isRequired,
+    isEdit: PropTypes.bool.isRequired,
+    singlePost: PropTypes.object.isRequired,
+    updatePost: PropTypes.func.isRequired
 };
 
 export default PostForm;

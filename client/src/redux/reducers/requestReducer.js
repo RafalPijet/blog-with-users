@@ -1,4 +1,4 @@
-import {START_REQUEST, STOP_REQUEST, ERROR_REQUEST} from "../actions/requestActions";
+import {START_REQUEST, STOP_REQUEST, ERROR_REQUEST, RESET_REQUEST} from "../actions/requestActions";
 const initialState = {pending: false, error: null, success: null};
 
 const reducer = (state = initialState, action = {}) => {
@@ -9,6 +9,8 @@ const reducer = (state = initialState, action = {}) => {
             return {pending: false, error: null, success: true};
         case ERROR_REQUEST:
             return {pending: false, error: action.error, success: false};
+        case RESET_REQUEST:
+            return {pending: false, error: null, success: null};
         default:
             return state;
     }

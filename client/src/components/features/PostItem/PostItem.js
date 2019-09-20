@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import HtmlBox from "../../common/HtmlBox/HtmlBox";
@@ -37,7 +38,9 @@ class PostItem extends React.Component {
                         <SectionTitle>{singlePost.author}</SectionTitle>
                     </div>
                     <HtmlBox>{singlePost.content}</HtmlBox>
-                    <Button variant="primary">Edit post</Button>
+                    <Link to="/posts/edit">
+                        <Button variant="primary">Edit post</Button>
+                    </Link>
                 </div>
             )
         } else if (request.pending && request.success === null) {
