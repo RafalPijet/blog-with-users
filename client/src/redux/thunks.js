@@ -1,7 +1,7 @@
 import axios from "axios";
 import {API_URL} from "../config";
 import {loadPosts, loadPost, thumbUp, thumbDown} from "./actions/postsActions";
-import {startRequest, stopRequest, errorRequest} from "./actions/requestActions";
+import {startRequest, stopRequest, errorRequest, beginSetVotes} from "./actions/requestActions";
 
 export const loadPostsRequest = () => {
     return async dispatch => {
@@ -73,6 +73,8 @@ export const updatePostRequest = post => {
 export const setThumbRequest = (id, isUp) => {
     return async dispatch => {
 
+        dispatch(beginSetVotes());
+
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.put(`${API_URL}/posts/${id}/${isUp}`);
@@ -80,6 +82,7 @@ export const setThumbRequest = (id, isUp) => {
             if (res.status === 200) {
                 isUp ? dispatch(thumbUp(id)) : dispatch(thumbDown(id));
             }
+            dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(`Can't change a votes level: ${err.message}`))
         }

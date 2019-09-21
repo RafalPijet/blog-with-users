@@ -20,8 +20,8 @@ class Posts extends React.Component {
         const {posts, request} = this.props;
         const {votesHandling} = this;
 
-        if (!request.pending && request.success && posts.length > 0) {
-            return <PostsList posts={posts} votesHandling={votesHandling}/>
+        if ((!request.pending && request.success && posts.length > 0) || request.votes) {
+            return <PostsList posts={posts} votesHandling={votesHandling} request={request}/>
         } else if (request.pending || request.success === null) {
             return <SpinnerRequest/>
         } else if (!request.pending && request.error !== null) {

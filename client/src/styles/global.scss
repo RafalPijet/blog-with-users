@@ -21,4 +21,8 @@ a, a:hover, a:visited {
   text-decoration: none;
 }
 
+button {
+  outline: none !important;
+}
+
 @import 'typography';

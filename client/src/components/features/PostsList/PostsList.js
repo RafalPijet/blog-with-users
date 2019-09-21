@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PostSummary from '../PostSummary/PostSummary';
 
-const PostsList = ({posts, votesHandling}) => (
+const PostsList = ({posts, votesHandling, request}) => (
     <div>
-        {posts.map(post => <PostSummary key={post.id} {...post} votesHandling={votesHandling}/>)}
+        {posts.map(post => <PostSummary
+            key={post.id}
+            {...post}
+            votesHandling={votesHandling}
+            request={request}
+        />)}
     </div>
 );
 
@@ -19,7 +24,8 @@ PostsList.propTypes = {
             votesHandling: PropTypes.func
         })
     ),
-    votesHandling: PropTypes.func.isRequired
+    votesHandling: PropTypes.func.isRequired,
+    request: PropTypes.object.isRequired
 };
 
 export default PostsList

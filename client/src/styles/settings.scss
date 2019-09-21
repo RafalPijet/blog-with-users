@@ -26,6 +26,7 @@ $font-text: 'Roboto', sans-serif;
 $radius: 5px;
 $base-size: 14px;
 $transition: all 0.5s;
+$transition2: all 0.1s;
 
 @mixin p-el($element) {
   &:#{$element}, &::#{$element} {
