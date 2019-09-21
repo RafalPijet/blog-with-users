@@ -75,7 +75,7 @@ class PostForm extends React.Component {
                             toolbar: {buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3']}
                         }}
                     />
-                    <Button variant="primary">{`${isEdit ? "Update" : "Add"} post`}</Button>
+                    <Button variant="primary">{`${isEdit ? "Update" : "Add"} Post`}</Button>
                 </form>
             )
         }

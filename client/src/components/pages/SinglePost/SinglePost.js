@@ -8,7 +8,7 @@ const SinglePost = props => {
     return (
         <div>
             <PageTitle>Single Post</PageTitle>
-            <PostItem id={props.match.params.id}/>
+            <PostItem isRandom={false} id={props.match.params.id}/>
         </div>
     )
 };

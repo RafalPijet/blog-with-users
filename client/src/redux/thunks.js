@@ -88,3 +88,19 @@ export const setThumbRequest = (id, isUp) => {
         }
     }
 };
+
+export const randomPostRequest = () => {
+    return async dispatch => {
+
+        dispatch(startRequest());
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            let post = await axios.get(`${API_URL}/posts/random`);
+            dispatch(loadPost(post.data));
+            dispatch(stopRequest());
+        } catch (err) {
+            dispatch(errorRequest(err.message));
+        }
+    }
+};

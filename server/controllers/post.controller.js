@@ -63,3 +63,14 @@ exports.setThumb = async (req, res) => {
         res.status(500).json(err)
     }
 };
+
+exports.randomPost = async (req, res) => {
+
+    try {
+        let posts = await Post.find();
+        let randomNumber = await Math.ceil(Math.random() * posts.length) - 1;
+        res.status(200).json(posts[randomNumber]);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+};

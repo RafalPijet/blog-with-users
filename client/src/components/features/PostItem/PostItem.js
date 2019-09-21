@@ -15,8 +15,9 @@ class PostItem extends React.Component {
     };
 
     componentDidMount() {
-        const {singleHandling} = this;
-        singleHandling();
+        const {singleHandling, randomHandling} = this;
+        const {isRandom} = this.props;
+        isRandom ? randomHandling() : singleHandling();
     }
 
     singleHandling = async () => {
@@ -25,9 +26,16 @@ class PostItem extends React.Component {
         await this.setState({singlePost: this.props.singlePost});
     };
 
+    randomHandling = async () => {
+        const {randomPost} = this.props;
+        await randomPost();
+        await this.setState({singlePost: this.props.singlePost});
+    };
+
     render() {
         const {singlePost} = this.state;
         const {request} = this.props;
+        const {randomHandling} = this;
 
         if (!request.pending && request.success) {
             return (
@@ -38,9 +46,12 @@ class PostItem extends React.Component {
                         <SectionTitle>{singlePost.author}</SectionTitle>
                     </div>
                     <HtmlBox>{singlePost.content}</HtmlBox>
-                    <Link to="/posts/edit">
-                        <Button variant="primary">Edit post</Button>
+                    <Link hidden={this.props.isRandom} to="/posts/edit">
+                        <Button variant="primary">Edit Post</Button>
                     </Link>
+                    <Button hidden={!this.props.isRandom}
+                            onClick={() => randomHandling()}
+                            variant="primary">Random Post</Button>
                 </div>
             )
         } else if (request.pending && request.success === null) {
@@ -64,7 +75,9 @@ PostItem.propTypes = {
         votes: PropTypes.number
     }),
     request: PropTypes.object.isRequired,
-    loadPost: PropTypes.func.isRequired
+    loadPost: PropTypes.func.isRequired,
+    id: PropTypes.string,
+    isRandom: PropTypes.bool.isRequired
 };
 
 export default PostItem;
