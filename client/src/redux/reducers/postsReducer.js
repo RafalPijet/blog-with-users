@@ -1,8 +1,11 @@
-import {LOAD_POSTS, LOAD_POST, THUMB_UP, THUMB_DOWN} from "../actions/postsActions";
+import {LOAD_POSTS, LOAD_POST, THUMB_UP, THUMB_DOWN, LOAD_POSTS_RANGE} from "../actions/postsActions";
 
 const initialState = {
     data: [],
-    singlePost: {}
+    singlePost: {},
+    amount: 0,
+    postsPerPage: 10,
+    initialPage: 1
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -11,6 +14,14 @@ const reducer = (state = initialState, action = {}) => {
             return {...state, data: action.payload};
         case LOAD_POST:
             return {...state, singlePost: action.post};
+        case LOAD_POSTS_RANGE:
+            return {
+                ...state,
+                data: [...action.payload.data],
+                amount: action.payload.amount,
+                postsPerPage: action.payload.postsPerPage,
+                initialPage: action.payload.initialPage
+            };
         case THUMB_UP:
             return {
                 ...state,

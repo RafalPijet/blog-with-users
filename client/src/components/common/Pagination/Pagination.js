@@ -4,57 +4,58 @@ import './Pagination.scss';
 
 class Pagination extends React.Component {
     state = {
-        presentPage: this.props.initialPage || 1,
+        isActive: this.props.isActive || false,
+        postsPerPage: this.props.postsPerPage || 10,
+        presentPage: this.props.presentPage || 1,
         leftArrowIsHidden: true,
         rightArrowIsHidden: false
     };
 
-    changePage = async newPage => {
-        const {onPageChange} = this.props;
-        const {checkArrows} = this;
-        await this.setState({presentPage: newPage});
-        onPageChange(newPage);
-        checkArrows();
-    };
-
-    changePageWithArrow = async isUp => {
-        const {presentPage} = this.state;
-        const {checkArrows} = this;
-        await isUp ? this.setState({presentPage: presentPage + 1}) :
-            this.setState({presentPage: presentPage - 1});
-        checkArrows();
-    };
-
-    checkArrows = () => {
-        const {presentPage} = this.state;
-        const {pages} = this.props;
+    componentDidMount() {
+        const {pages, presentPage} = this.props;
+        console.log(this.state.postsPerPage);
+        this.setState({presentPage: presentPage});
         presentPage > 1 ? this.setState({leftArrowIsHidden: false}) :
             this.setState({leftArrowIsHidden: true});
         presentPage < pages ? this.setState({rightArrowIsHidden: false}) :
             this.setState({rightArrowIsHidden: true});
+    }
+
+    changePage = async (newPage, isUp) => {
+        const {onPageChange} = this.props;
+        const {postsPerPage, presentPage} = this.state;
+
+        if (newPage) {
+            await this.setState({presentPage: newPage});
+
+        } else {
+            await isUp ? this.setState({presentPage: presentPage + 1}) :
+                this.setState({presentPage: presentPage - 1});
+        }
+        onPageChange(this.state.presentPage, postsPerPage);
     };
 
     render() {
         const {pages} = this.props;
-        const {presentPage, leftArrowIsHidden, rightArrowIsHidden} = this.state;
-        const {changePage, changePageWithArrow} = this;
+        const {presentPage, leftArrowIsHidden, rightArrowIsHidden, isActive} = this.state;
+        const {changePage} = this;
         return (
-            <div className="pagination">
+            <div hidden={!isActive} className="pagination">
                 <ul className="pagination__list">
                     <li className="pagination__list__item"
                         hidden={leftArrowIsHidden}
-                        onClick={() => changePageWithArrow(false)}>{"<"}</li>
+                        onClick={() => changePage(null,false)}>{"<"}</li>
                     {[...Array(pages)].map((el, page) =>
                         <li
                             key={page++}
                             className={`pagination__list__item${presentPage === page ? " pagination__list__item--active" : ""}`}
-                            onClick={() => changePage(page)}>
+                            onClick={() => changePage(page, null)}>
                             {page}
                         </li>
                     )}
                     <li className="pagination__list__item"
                         hidden={rightArrowIsHidden}
-                        onClick={() => changePageWithArrow(true)}>{">"}</li>
+                        onClick={() => changePage(null,true)}>{">"}</li>
                 </ul>
             </div>
         )
@@ -64,7 +65,9 @@ class Pagination extends React.Component {
 Pagination.propTypes = {
     pages: PropTypes.number.isRequired,
     onPageChange: PropTypes.func.isRequired,
-    initialPage: PropTypes.number
+    presentPage: PropTypes.number,
+    isActive: PropTypes.bool,
+    postsPerPage: PropTypes.number
 };
 
 export default Pagination;

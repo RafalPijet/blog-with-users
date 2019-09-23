@@ -8,8 +8,8 @@ import Pagination from "../../common/Pagination/Pagination";
 class Posts extends React.Component {
 
     componentDidMount() {
-        const {loadPosts} = this.props;
-        loadPosts();
+        const {loadPosts, presentPage, postsPerPage} = this.props;
+        loadPosts(presentPage, postsPerPage);
     }
 
     votesHandling = (id, isUp) => {
@@ -18,14 +18,15 @@ class Posts extends React.Component {
     };
 
     render() {
-        const {posts, request} = this.props;
+        const {posts, request, pages, presentPage, loadPosts, postsPerPage} = this.props;
         const {votesHandling} = this;
 
         if ((!request.pending && request.success && posts.length > 0) || request.votes) {
             return (
                 <div>
                     <PostsList posts={posts} votesHandling={votesHandling} request={request}/>
-                    <Pagination pages={10} onPageChange={page => console.log(page)}/>
+                    <Pagination isActive={true} pages={pages} postsPerPage={postsPerPage}
+                                onPageChange={loadPosts} presentPage={presentPage}/>
                 </div>
 
             )
@@ -50,7 +51,8 @@ Posts.propTypes = {
         })
     ),
     request: PropTypes.object.isRequired,
-    loadPosts: PropTypes.func.isRequired
+    loadPosts: PropTypes.func.isRequired,
+    postsPerPage: PropTypes.number
 };
 
 export default Posts;

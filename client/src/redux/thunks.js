@@ -1,6 +1,6 @@
 import axios from "axios";
 import {API_URL} from "../config";
-import {loadPosts, loadPost, thumbUp, thumbDown} from "./actions/postsActions";
+import {loadPosts, loadPost, thumbUp, thumbDown, loadPostsByRange} from "./actions/postsActions";
 import {startRequest, stopRequest, errorRequest, beginSetVotes} from "./actions/requestActions";
 
 export const loadPostsRequest = () => {
@@ -98,6 +98,30 @@ export const randomPostRequest = () => {
             await new Promise(resolve => setTimeout(resolve, 2000));
             let post = await axios.get(`${API_URL}/posts/random`);
             dispatch(loadPost(post.data));
+            dispatch(stopRequest());
+        } catch (err) {
+            dispatch(errorRequest(err.message));
+        }
+    }
+};
+
+export const loadPostsByRangeRequest = (page, postsPerPage) => {
+    return async dispatch => {
+
+        dispatch(startRequest());
+
+        try {
+            let start = Math.ceil((page - 1) * postsPerPage);
+            let limit = postsPerPage;
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            let res = await axios.get(`${API_URL}/posts/range/${start}/${limit}`);
+            let payload = {
+                data: res.data.selectedPosts,
+                amount: res.data.amount,
+                postsPerPage: postsPerPage,
+                initialPage: page
+            };
+            dispatch(loadPostsByRange(payload));
             dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(err.message));

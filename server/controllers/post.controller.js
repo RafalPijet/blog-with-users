@@ -74,3 +74,26 @@ exports.randomPost = async (req, res) => {
         res.status(500).json(err);
     }
 };
+
+exports.getPostsWithRange = async (req, res) => {
+
+    try {
+        let {start, limit} = req.params;
+        start = parseInt(start);
+        limit = parseInt(limit);
+        let posts = await Post.find();
+        let amount = await Post.countDocuments();
+        let result = [];
+
+        for (let i = posts.length - 1; i > -1; i--) {
+            result.push(posts[i]);
+        }
+        let selectedPosts = result.slice(start, start + limit);
+        res.status(200).json({
+            selectedPosts,
+            amount
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+};
