@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import PostsList from '../PostsList/PostsList';
 import SpinnerRequest from '../../common/SpinnerRequest/SpinnerRequest';
 import Alert from '../../common/Alert/Alert';
+import Pagination from "../../common/Pagination/Pagination";
 
 class Posts extends React.Component {
 
@@ -21,7 +22,13 @@ class Posts extends React.Component {
         const {votesHandling} = this;
 
         if ((!request.pending && request.success && posts.length > 0) || request.votes) {
-            return <PostsList posts={posts} votesHandling={votesHandling} request={request}/>
+            return (
+                <div>
+                    <PostsList posts={posts} votesHandling={votesHandling} request={request}/>
+                    <Pagination pages={10} onPageChange={page => console.log(page)}/>
+                </div>
+
+            )
         } else if (request.pending || request.success === null) {
             return <SpinnerRequest/>
         } else if (!request.pending && request.error !== null) {
