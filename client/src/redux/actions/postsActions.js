@@ -18,7 +18,7 @@ export const thumbDown = id => ({id, type: THUMB_DOWN});
 
 // SELECTORS
 export const getPosts = store => store.posts.data;
-export const getAmount = store => store.posts.data.length;
+export const getAmount = store => store.posts.amount;
 export const getPost = store => store.posts.singlePost;
 export const getInitialPaginationPage = store => store.posts.initialPage;
 export const getPaginationPages = store => Math.ceil(store.posts.amount / store.posts.postsPerPage);

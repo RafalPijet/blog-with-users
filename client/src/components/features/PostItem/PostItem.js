@@ -34,7 +34,7 @@ class PostItem extends React.Component {
 
     render() {
         const {singlePost} = this.state;
-        const {request} = this.props;
+        const {request, presentPage} = this.props;
         const {randomHandling} = this;
 
         if (!request.pending && request.success) {
@@ -52,6 +52,9 @@ class PostItem extends React.Component {
                     <Button hidden={!this.props.isRandom}
                             onClick={() => randomHandling()}
                             variant="primary">Random Post</Button>
+                    <Link to={`${presentPage === 1 ? "/" : "/posts"}`}>
+                        <Button variant="info">{`Back to ${presentPage === 1 ? "last posts" : "posts"}`}</Button>
+                    </Link>
                 </div>
             )
         } else if (request.pending && request.success === null) {
@@ -77,7 +80,8 @@ PostItem.propTypes = {
     request: PropTypes.object.isRequired,
     loadPost: PropTypes.func.isRequired,
     id: PropTypes.string,
-    isRandom: PropTypes.bool.isRequired
+    isRandom: PropTypes.bool.isRequired,
+    presentPage: PropTypes.number.isRequired
 };
 
 export default PostItem;

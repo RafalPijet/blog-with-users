@@ -5,7 +5,6 @@ import './Pagination.scss';
 class Pagination extends React.Component {
     state = {
         isActive: this.props.isActive || false,
-        postsPerPage: this.props.postsPerPage || 10,
         presentPage: this.props.presentPage || 1,
         leftArrowIsHidden: true,
         rightArrowIsHidden: false
@@ -13,7 +12,6 @@ class Pagination extends React.Component {
 
     componentDidMount() {
         const {pages, presentPage} = this.props;
-        console.log(this.state.postsPerPage);
         this.setState({presentPage: presentPage});
         presentPage > 1 ? this.setState({leftArrowIsHidden: false}) :
             this.setState({leftArrowIsHidden: true});
@@ -23,7 +21,7 @@ class Pagination extends React.Component {
 
     changePage = async (newPage, isUp) => {
         const {onPageChange} = this.props;
-        const {postsPerPage, presentPage} = this.state;
+        const {presentPage} = this.state;
 
         if (newPage) {
             await this.setState({presentPage: newPage});
@@ -32,7 +30,7 @@ class Pagination extends React.Component {
             await isUp ? this.setState({presentPage: presentPage + 1}) :
                 this.setState({presentPage: presentPage - 1});
         }
-        onPageChange(this.state.presentPage, postsPerPage);
+        onPageChange(this.state.presentPage);
     };
 
     render() {
@@ -66,8 +64,7 @@ Pagination.propTypes = {
     pages: PropTypes.number.isRequired,
     onPageChange: PropTypes.func.isRequired,
     presentPage: PropTypes.number,
-    isActive: PropTypes.bool,
-    postsPerPage: PropTypes.number
+    isActive: PropTypes.bool
 };
 
 export default Pagination;

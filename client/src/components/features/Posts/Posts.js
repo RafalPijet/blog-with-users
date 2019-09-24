@@ -8,8 +8,8 @@ import Pagination from "../../common/Pagination/Pagination";
 class Posts extends React.Component {
 
     componentDidMount() {
-        const {loadPosts, presentPage, postsPerPage} = this.props;
-        loadPosts(presentPage, postsPerPage);
+        const {loadPosts, presentPage, postsPerPage, isLastPosts} = this.props;
+        isLastPosts ? loadPosts(1, postsPerPage || 3) : loadPosts(presentPage, postsPerPage || 3);
     }
 
     votesHandling = (id, isUp) => {
@@ -17,16 +17,21 @@ class Posts extends React.Component {
         setThumb(id, isUp);
     };
 
+    changePostsHandling = page => {
+        const {postsPerPage, loadPosts} = this.props;
+        loadPosts(page, postsPerPage || 3);
+    };
+
     render() {
-        const {posts, request, pages, presentPage, loadPosts, postsPerPage} = this.props;
-        const {votesHandling} = this;
+        const {posts, request, pages, presentPage, isActive} = this.props;
+        const {votesHandling, changePostsHandling} = this;
 
         if ((!request.pending && request.success && posts.length > 0) || request.votes) {
             return (
                 <div>
                     <PostsList posts={posts} votesHandling={votesHandling} request={request}/>
-                    <Pagination isActive={true} pages={pages} postsPerPage={postsPerPage}
-                                onPageChange={loadPosts} presentPage={presentPage}/>
+                    <Pagination isActive={isActive} pages={pages}
+                                onPageChange={changePostsHandling} presentPage={presentPage}/>
                 </div>
 
             )
@@ -52,7 +57,9 @@ Posts.propTypes = {
     ),
     request: PropTypes.object.isRequired,
     loadPosts: PropTypes.func.isRequired,
-    postsPerPage: PropTypes.number
+    postsPerPage: PropTypes.number,
+    isActive: PropTypes.bool,
+    isLastPosts: PropTypes.bool
 };
 
 export default Posts;

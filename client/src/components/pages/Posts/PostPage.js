@@ -7,7 +7,7 @@ const PostPage = () => (
     <div>
         <PageTitle>Posts list</PageTitle>
         <PostsCounter/>
-        <Posts postsPerPage={10}/>
+        <Posts isActive={true}/>
     </div>
 );
 
