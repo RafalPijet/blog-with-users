@@ -1,5 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
+import {connect} from "react-redux";
+import {getLogin} from "./redux/actions/usersActions";
 import MainLayout from './components/layouts/MainLayout/MainLayout';
 import PostPage from './components/pages/Posts/PostPage';
 import Home from './components/pages/Home/Home';
@@ -14,27 +16,13 @@ import SinglePost from './components/pages/SinglePost/SinglePost';
 import EditPost from './components/pages/EditPost/EditPost';
 
 class App extends React.Component {
-    state = {
-        isLogin: false
-    };
 
     render() {
-        let {isLogin} = this.state;
+        let {isLogin} = this.props;
 
         if (isLogin) {
             return (
-                <MainLayout>
-                    <Switch>
-                        <Route path="/" exact component={Welcome}/>
-                        <Route path="/login" exact component={Login}/>
-                        <Route path="/registration" exact component={Registration}/>
-                        <Route component={PageNotFound}/>
-                    </Switch>
-                </MainLayout>
-            )
-        } else {
-            return (
-                <MainLayout>
+                <MainLayout isLogin={isLogin}>
                     <Switch>
                         <Route path="/" exact component={Home}/>
                         <Route path="/posts" exact component={PostPage}/>
@@ -46,9 +34,24 @@ class App extends React.Component {
                         <Route component={PageNotFound}/>
                     </Switch>
                 </MainLayout>
+            )
+        } else {
+            return (
+                <MainLayout isLogin={isLogin}>
+                    <Switch>
+                        <Route path="/" exact component={Welcome}/>
+                        <Route path="/login" exact component={Login}/>
+                        <Route path="/registration" exact component={Registration}/>
+                        <Route component={PageNotFound}/>
+                    </Switch>
+                </MainLayout>
             );
         }
     }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    isLogin: getLogin(state)
+});
+
+export default connect(mapStateToProps)(App);

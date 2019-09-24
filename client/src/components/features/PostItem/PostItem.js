@@ -52,7 +52,7 @@ class PostItem extends React.Component {
                     <Button hidden={!this.props.isRandom}
                             onClick={() => randomHandling()}
                             variant="primary">Random Post</Button>
-                    <Link to={`${presentPage === 1 ? "/" : "/posts"}`}>
+                    <Link hidden={this.props.isRandom} to={`${presentPage === 1 ? "/" : "/posts"}`}>
                         <Button variant="info">{`Back to ${presentPage === 1 ? "last posts" : "posts"}`}</Button>
                     </Link>
                 </div>

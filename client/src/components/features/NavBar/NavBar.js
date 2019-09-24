@@ -16,16 +16,16 @@ class NavBar extends React.Component {
         loginLinks: [
             {path: "/login", title: "LogIn"},
             {path: "/registration", title: "Registration"}
-        ],
-        isLogin: false
+        ]
     };
 
     render() {
-        const {mainLinks, loginLinks, isLogin} = this.state;
+        const {mainLinks, loginLinks} = this.state;
+        const {isLogin} = this.props;
         return (
             <div className="navbar">
                 <Logo image={logo} name="logo"/>
-                <MainMenu links={isLogin ? loginLinks : mainLinks}/>
+                <MainMenu links={isLogin ? mainLinks : loginLinks}/>
             </div>
         )
     }
