@@ -1,7 +1,8 @@
 import axios from "axios";
 import {API_URL} from "../config";
 import {loadPosts, loadPost, thumbUp, thumbDown, loadPostsByRange} from "./actions/postsActions";
-import {startRequest, stopRequest, errorRequest, beginSetVotes} from "./actions/requestActions";
+import {startRequest, stopRequest, errorRequest, beginSetVotes, resetRequest} from "./actions/requestActions";
+import {setLogin, setUser} from "./actions/usersActions";
 
 export const loadPostsRequest = () => {
     return async dispatch => {
@@ -139,19 +140,23 @@ export const loadUserByLogin = login => {
             let res = await axios.get(`${API_URL}/users/login`, {params: {email: login.email}});
 
             if (res.data !== null) {
-                
+
                 if (res.data.password === login.password) {
-                    
-                    dispatch(stopRequest());
+                    await dispatch(stopRequest());
+                    await dispatch(setLogin(true));
+                    await dispatch(setUser(res.data));
+                    console.log("Done");
                 } else {
                     dispatch(errorRequest("Wrong password!!!"));
+                    setTimeout(() => dispatch(resetRequest()), 4000);
                 }
-                
             } else {
                 dispatch(errorRequest("User don't exist!!!"));
+                setTimeout(() => dispatch(resetRequest()), 4000);
             }
         } catch (err) {
             dispatch(errorRequest(err.message));
+            setTimeout(() => dispatch(resetRequest()), 4000);
         }
     }
 }
