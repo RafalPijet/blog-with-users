@@ -1,8 +1,9 @@
 import React from 'react';
+import PageTitle from "../../common/PageTitle/PageTitle";
 
 const Registration = () => (
     <div>
-        <h2>Registration</h2>
+        <PageTitle>Registration</PageTitle>
     </div>
 );
 

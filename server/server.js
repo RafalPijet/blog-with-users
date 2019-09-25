@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const config = require('./config');
 const postRouter = require('./routes/post.routes');
+const userRouter = require('./routes/user.routes');
 const loadTestData = require('./dataTest');
 
 const app = express();
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use('/api', postRouter);
+app.use('/api', userRouter);
 app.use(helmet());
 
 mongoose.connect(config.DB, {useNewUrlParser: true});

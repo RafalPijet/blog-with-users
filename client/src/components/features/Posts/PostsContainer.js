@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import Posts from './Posts';
 import {getPosts, getInitialPaginationPage, getPaginationPages} from "../../../redux/actions/postsActions";
 import {getRequest} from "../../../redux/actions/requestActions";
-import {loadPostsRequest, setThumbRequest, loadPostsByRangeRequest} from "../../../redux/thunks";
+import {setThumbRequest, loadPostsByRangeRequest} from "../../../redux/thunks";
 
 const mapDispatchToProps = dispatch => ({
     loadPosts: (page, postsPerPage) => dispatch(loadPostsByRangeRequest(page, postsPerPage)),

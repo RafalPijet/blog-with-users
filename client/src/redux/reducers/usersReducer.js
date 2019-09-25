@@ -2,6 +2,7 @@ import {SET_LOGIN} from "../actions/usersActions";
 
 const initialState = {
     isLogin: false
+    
 };
 
 const reducer = (state = initialState, action) => {

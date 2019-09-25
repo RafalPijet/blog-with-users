@@ -128,3 +128,30 @@ export const loadPostsByRangeRequest = (page, postsPerPage) => {
         }
     }
 };
+
+export const loadUserByLogin = login => {
+    return async dispatch => {
+
+        dispatch(startRequest());
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            let res = await axios.get(`${API_URL}/users/login`, {params: {email: login.email}});
+
+            if (res.data !== null) {
+                
+                if (res.data.password === login.password) {
+                    
+                    dispatch(stopRequest());
+                } else {
+                    dispatch(errorRequest("Wrong password!!!"));
+                }
+                
+            } else {
+                dispatch(errorRequest("User don't exist!!!"));
+            }
+        } catch (err) {
+            dispatch(errorRequest(err.message));
+        }
+    }
+}
