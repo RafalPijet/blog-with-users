@@ -3,7 +3,7 @@ import PageTitle from "../../common/PageTitle/PageTitle";
 
 const Welcome = () => (
     <div>
-        <PageTitle>Welcome in Blog</PageTitle>
+        <PageTitle>Welcome to the Blog</PageTitle>
     </div>
 );
 

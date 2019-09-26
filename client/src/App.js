@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {connect} from "react-redux";
-import {getLogin} from "./redux/actions/usersActions";
+import {getLogin, getUser} from "./redux/actions/usersActions";
 import MainLayout from './components/layouts/MainLayout/MainLayout';
 import PostPage from './components/pages/Posts/PostPage';
 import Home from './components/pages/Home/Home';
@@ -19,11 +19,11 @@ import Logout from './components/pages/Logout/Logout';
 class App extends React.Component {
 
     render() {
-        let {isLogin} = this.props;
+        let {isLogin, loggedUser} = this.props;
 
         if (isLogin) {
             return (
-                <MainLayout isLogin={isLogin}>
+                <MainLayout isLogin={isLogin} loggedUser={loggedUser}>
                     <Switch>
                         <Route path="/" exact component={Home}/>
                         <Route path="/posts" exact component={PostPage}/>
@@ -53,7 +53,8 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    isLogin: getLogin(state)
+    isLogin: getLogin(state),
+    loggedUser: getUser(state)
 });
 
 export default connect(mapStateToProps)(App);

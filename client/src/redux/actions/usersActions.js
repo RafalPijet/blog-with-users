@@ -12,3 +12,4 @@ export const setUser = user => ({user, type: SET_USER});
 
 // SELECTORS
 export const getLogin = store => store.users.isLogin;
+export const getUser = store => store.users.user;

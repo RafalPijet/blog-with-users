@@ -3,3 +3,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.menu-box {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  p {
+    padding-right: 12px;
+    font-weight: bold;
+  }
+}
