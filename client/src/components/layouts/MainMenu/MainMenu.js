@@ -17,7 +17,7 @@ const MainMenu = ({ links, location }) => (
 MainMenu.propTypes = {
   links: PropTypes.arrayOf(PropTypes.shape({
     path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
   })),
 };
 

@@ -13,33 +13,69 @@ class UserForm extends React.Component {
             email: '',
             password: ''
         },
-        isVisible: true
+        register: {
+            firstName: '',
+            lastName: '',
+            emailRegister: '',
+            passwordRegister: '',
+            confirmPassword: ''
+        },
+        isVisible: true,
+        isLogin: this.props.isLogin
     };
+
+    componentDidMount() {
+        this.props.resetRequest();
+    }
 
     componentWillReceiveProps(nextProps, nextContext) {
         if (nextProps.request.error === null) {
             this.setState({isVisible: true});
         }
-        // setTimeout(() => console.log(this.state.isVisible), 500);
-        // console.log(nextProps.request.error);
     }
 
     handleChange = event => {
-        const {login} = this.state;
-        this.setState({login: {...login, [event.target.name]: event.target.value}})
+        const {login, register, isLogin} = this.state;
+        isLogin ? this.setState({login: {...login, [event.target.name]: event.target.value}}) :
+            this.setState({register: {...register, [event.target.name]: event.target.value}})
     };
 
     sendLoginData = event => {
-        const {loadUser, errorRequest, resetRequest} = this.props;
-        const {login} = this.state;
+        const {loadUser, errorRequest, resetRequest, addUser} = this.props;
+        const {login, register, isLogin} = this.state;
         event.preventDefault();
+        this.setState({isVisible: true});
 
-        if (login.email.includes("@")) {
-            loadUser(login);
+        if (isLogin) {
+
+            if (login.email.includes("@")) {
+                loadUser(login);
+            } else {
+                errorRequest("You must enter an email adress");
+                setTimeout(() => resetRequest(), 4000);
+            }
         } else {
-            this.setState({isVisible: true});
-            errorRequest("You must enter an email adress");
-            setTimeout(() => resetRequest(), 4000);
+            if (register.firstName.length && register.lastName) {
+
+                if (register.emailRegister.includes("@")) {
+
+                    if (register.passwordRegister === register.confirmPassword && register.passwordRegister.length !== 0) {
+                        let user = {
+                            firstName: register.firstName,
+                            lastName: register.lastName,
+                            email: register.emailRegister,
+                            password: register.passwordRegister
+                        };
+                        addUser(user);
+                    } else {
+                        errorRequest("Check password");
+                        setTimeout(() => resetRequest(), 4000);
+                    }
+                } else {
+                    errorRequest("You must enter an email adress");
+                    setTimeout(() => resetRequest(), 4000);
+                }
+            }
         }
     };
 
@@ -60,11 +96,17 @@ class UserForm extends React.Component {
     render() {
         const {sendLoginData, handleChange, countVisible} = this;
         const {email, password} = this.state.login;
-        const {isVisible} = this.state;
+        const {firstName, lastName, emailRegister, passwordRegister, confirmPassword} = this.state.register;
+        const {isVisible, isLogin} = this.state;
         const {request} = this.props;
 
         if (request.success) {
-            return <Redirect to='/'/>
+
+            if (!isLogin) {
+                return <Alert isVisible={isVisible} variant="success">The user has been registered</Alert>
+            } else {
+                return <Redirect to="/"/>
+            }
         } else if (request.error !== null) {
             countVisible(request.error);
             return <Alert variant="error" isVisible={isVisible}>{request.error}</Alert>
@@ -73,15 +115,30 @@ class UserForm extends React.Component {
         } else {
             return (
                 <form>
-                    <TextField label="email" type="email" name="email"
-                               value={email} onChange={handleChange}/>
-                    <TextField label="password" type="password" name="password"
-                               value={password} onChange={handleChange}/>
+                    <TextField hidden={isLogin} label="first name" onChange={handleChange}
+                               value={firstName} name="firstName"/>
+                    <TextField hidden={isLogin} label="last name" onChange={handleChange}
+                               value={lastName} name="lastName"/>
+                    <TextField label="email" type="email" name={isLogin ? "email" : "emailRegister"}
+                               value={isLogin ? email : emailRegister} onChange={handleChange}/>
+                    <TextField label="password" type="password" name={isLogin ? "password" : "passwordRegister"}
+                               value={isLogin ? password : passwordRegister} onChange={handleChange}/>
+                    <TextField hidden={isLogin} label="confirm password" onChange={handleChange} type="password"
+                               value={confirmPassword} name="confirmPassword"/>
                     <Button onClick={event => sendLoginData(event)} variant="primary">Send</Button>
                 </form>
             )
         }
     }
 }
+
+UserForm.propTypes = {
+    request: PropTypes.object.isRequired,
+    loadUser: PropTypes.func.isRequired,
+    errorRequest: PropTypes.func.isRequired,
+    resetRequest: PropTypes.func.isRequired,
+    isLogin: PropTypes.bool.isRequired,
+    addUser: PropTypes.func.isRequired
+};
 
 export default UserForm;
