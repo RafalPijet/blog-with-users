@@ -5,7 +5,7 @@ import { MdInfoOutline, MdDone, MdErrorOutline } from 'react-icons/md';
 
 import './Alert.scss';
 
-const Alert = ({ variant = '', children, ...otherProps }) => {
+const Alert = ({ variant = '', children, isVisible, ...otherProps }) => {
 
   const icon = () => {
     switch(variant) {
@@ -23,7 +23,7 @@ const Alert = ({ variant = '', children, ...otherProps }) => {
   };
 
   return (
-    <Animated className="alert-main" animationIn="bounceIn" animationOut="fadeOut">
+    <Animated className="alert-main" animationIn="bounceIn" animationOut="fadeOut" isVisible={isVisible}>
       <div {...otherProps} className={`alert alert--${variant}`}>
         {icon()}
         <span className="alert__desc">{children}</span>

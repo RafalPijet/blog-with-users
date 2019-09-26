@@ -9,30 +9,65 @@ import Alert from "../../common/Alert/Alert";
 class UserForm extends React.Component {
 
     state = {
-        email: '',
-        password: ''
+        login: {
+            email: '',
+            password: ''
+        },
+        isVisible: true
     };
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        if (nextProps.request.error === null) {
+            this.setState({isVisible: true});
+        }
+        // setTimeout(() => console.log(this.state.isVisible), 500);
+        // console.log(nextProps.request.error);
+    }
+
     handleChange = event => {
-        this.setState({[event.target.name]: event.target.value})
+        const {login} = this.state;
+        this.setState({login: {...login, [event.target.name]: event.target.value}})
     };
 
     sendLoginData = event => {
-        const {loadUser} = this.props;
+        const {loadUser, errorRequest, resetRequest} = this.props;
+        const {login} = this.state;
         event.preventDefault();
-        loadUser(this.state);
+
+        if (login.email.includes("@")) {
+            loadUser(login);
+        } else {
+            this.setState({isVisible: true});
+            errorRequest("You must enter an email adress");
+            setTimeout(() => resetRequest(), 4000);
+        }
+    };
+
+    countVisible = error => {
+        const {email} = this.state.login;
+
+        if (error === "Wrong password!!!") {
+            setTimeout(() => this.setState({
+                isVisible: false, login: {email: email, password: ''}
+            }), 3000);
+        } else {
+            setTimeout(() => this.setState({
+                isVisible: false, login: {email: '', password: ''}
+            }), 3000);
+        }
     };
 
     render() {
-        const {sendLoginData, handleChange} = this;
-        const {email, password} = this.state;
+        const {sendLoginData, handleChange, countVisible} = this;
+        const {email, password} = this.state.login;
+        const {isVisible} = this.state;
         const {request} = this.props;
 
         if (request.success) {
             return <Redirect to='/'/>
-
         } else if (request.error !== null) {
-            return <Alert variant="error">{request.error}</Alert>
+            countVisible(request.error);
+            return <Alert variant="error" isVisible={isVisible}>{request.error}</Alert>
         } else if (request.pending) {
             return <SpinnerRequest/>
         } else {

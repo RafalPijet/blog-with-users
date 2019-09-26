@@ -145,7 +145,6 @@ export const loadUserByLogin = login => {
                     await dispatch(stopRequest());
                     await dispatch(setLogin(true));
                     await dispatch(setUser(res.data));
-                    console.log("Done");
                 } else {
                     dispatch(errorRequest("Wrong password!!!"));
                     setTimeout(() => dispatch(resetRequest()), 4000);
