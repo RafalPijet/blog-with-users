@@ -34,7 +34,7 @@ class PostItem extends React.Component {
 
     render() {
         const {singlePost} = this.state;
-        const {request, presentPage} = this.props;
+        const {request, presentPage, user} = this.props;
         const {randomHandling} = this;
 
         if (!request.pending && request.success) {
@@ -46,7 +46,8 @@ class PostItem extends React.Component {
                         <SectionTitle>{singlePost.author}</SectionTitle>
                     </div>
                     <HtmlBox>{singlePost.content}</HtmlBox>
-                    <Link hidden={this.props.isRandom} to="/posts/edit">
+                    <Link hidden={this.props.isRandom || singlePost.author !== `${user.firstName} ${user.lastName}`}
+                          to="/posts/edit">
                         <Button variant="primary">Edit Post</Button>
                     </Link>
                     <Button hidden={!this.props.isRandom}
@@ -81,7 +82,8 @@ PostItem.propTypes = {
     loadPost: PropTypes.func.isRequired,
     id: PropTypes.string,
     isRandom: PropTypes.bool.isRequired,
-    presentPage: PropTypes.number.isRequired
+    presentPage: PropTypes.number.isRequired,
+    user: PropTypes.object.isRequired
 };
 
 export default PostItem;

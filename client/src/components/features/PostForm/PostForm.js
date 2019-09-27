@@ -9,14 +9,15 @@ import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import SpinnerRequest from "../../common/SpinnerRequest/SpinnerRequest";
 import Alert from "../../common/Alert/Alert";
 import './PostForm.scss';
+import '../../common/TextField/TextField.scss';
 
 class PostForm extends React.Component {
     state = {
         post: {
-            id: '',
+            authorId: '',
             title: '',
             content: '',
-            author: ''
+            author: `${this.props.user.firstName} ${this.props.user.lastName}`
         }
     };
 
@@ -40,9 +41,10 @@ class PostForm extends React.Component {
     };
 
     sendPost = event => {
-        const {addPost, updatePost, isEdit} = this.props;
+        const {addPost, updatePost, isEdit, user} = this.props;
         const {post} = this.state;
         event.preventDefault();
+        post.authorId = user.id;
         isEdit ? updatePost(post) : addPost(post);
     };
 
@@ -64,7 +66,10 @@ class PostForm extends React.Component {
             return (
                 <form onSubmit={sendPost}>
                     <TextField label="Title" onChange={handleChange} value={title} name="title"/>
-                    <TextField label="Author" onChange={handleChange} value={author} name="author"/>
+                    <label className="text-field">
+                        <span className="text-field__label">{"Author"}</span>
+                        <p className="text-field__input" >{author}</p>
+                    </label>
                     <SectionTitle>{`${isEdit ? "Edit" : "Add"} post content`}</SectionTitle>
                     <Editor
                         className="content-editor"
@@ -88,7 +93,8 @@ PostForm.propTypes = {
     resetRequest: PropTypes.func.isRequired,
     isEdit: PropTypes.bool.isRequired,
     singlePost: PropTypes.object.isRequired,
-    updatePost: PropTypes.func.isRequired
+    updatePost: PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired
 };
 
 export default PostForm;

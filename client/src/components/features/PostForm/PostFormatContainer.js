@@ -3,10 +3,12 @@ import PostForm from './PostForm';
 import {addPostRequest, updatePostRequest} from "../../../redux/thunks";
 import {getRequest, resetRequest} from "../../../redux/actions/requestActions";
 import {getPost} from "../../../redux/actions/postsActions";
+import {getUser} from "../../../redux/actions/usersActions";
 
 const mapStateToProps = store => ({
     request: getRequest(store),
-    singlePost: getPost(store)
+    singlePost: getPost(store),
+    user: getUser(store)
 });
 
 const mapDispatchToProps = dispatch => ({

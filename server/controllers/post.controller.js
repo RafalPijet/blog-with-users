@@ -1,4 +1,5 @@
 const Post = require('../models/post.model');
+const User = require('../models/user.model');
 const uuid = require('uuid');
 
 exports.getPosts = async (req, res) => {
@@ -22,11 +23,17 @@ exports.getPost = async (req, res) => {
 exports.addPost = async (req, res) => {
 
     try {
-        let newPost = await new Post(req.body);
+        let newPost = await new Post();
+        newPost.title = req.body.title;
+        newPost.author = req.body.author;
+        newPost.content = req.body.content;
         newPost.votes = 0;
         newPost.id = uuid.v4();
-        let savedPost = await newPost.save();
-        res.status(200).json(savedPost);
+        let selectedUser = await User.findOne({id: req.body.authorId});
+        selectedUser.posts.push(newPost);
+        let updatedUser = await selectedUser.save();
+        await newPost.save();
+        res.status(200).json(updatedUser);
     } catch (err) {
         res.status(500).json(err)
     }

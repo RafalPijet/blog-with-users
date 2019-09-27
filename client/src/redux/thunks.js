@@ -48,7 +48,8 @@ export const addPostRequest = post => {
 
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
-            await axios.post(`${API_URL}/posts`, post);
+            let res = await axios.post(`${API_URL}/posts`, post);
+            dispatch(setUser(res.data));
             dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(err.message));

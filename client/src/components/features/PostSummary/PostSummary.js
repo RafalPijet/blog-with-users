@@ -15,10 +15,20 @@ class PostSummary extends React.Component {
         isBusy: false
     };
 
+    componentDidMount() {
+        const {user, author} = this.props;
+        (author === `${user.firstName} ${user.lastName}`) ? this.setState({isBusy: true}) :
+            this.setState({isBusy: false});
+    }
+
     componentWillReceiveProps(nextProps) {
         const {isWorking} = this.state;
-        (nextProps.request.votes && isWorking) ? this.setState({isBusy: true}) :
-            this.setState({isBusy: false, isWorking: false})
+        const {user, author} = this.props;
+
+        if (author !== `${user.firstName} ${user.lastName}`) {
+            (nextProps.request.votes && isWorking) ? this.setState({isBusy: true}) :
+                this.setState({isBusy: false, isWorking: false});
+        }
     }
 
     thumbHandling = async (id, isUp) => {
@@ -30,7 +40,7 @@ class PostSummary extends React.Component {
     render() {
         const {id, title, content, author, votes} = this.props;
         const {thumbHandling} = this;
-        const {isBusy} = this.state;
+        const {isBusy, isWorking} = this.state;
         return (
             <article className="post-summary">
                 <SmallTitle>{title}</SmallTitle>
@@ -42,12 +52,14 @@ class PostSummary extends React.Component {
                 <Link to={`/posts/${id}`}>
                     <Button variant="info">Read More</Button>
                 </Link>
-                <Button disabled={isBusy} variant={`success ${(isBusy) ? "progress-votes" : []}`}
+                <Button disabled={isBusy}
+                        variant={`success ${isBusy ? "disabled-votes" : ''} ${isWorking ? "progress-votes" : ''}`}
                         onClick={() => thumbHandling(id, true)}>
                     <FaThumbsUp/>
                 </Button>
                 <span style={{marginRight: '14px'}}>{votes}</span>
-                <Button disabled={isBusy} variant={`danger ${isBusy ? "progress-votes" : []}`}
+                <Button disabled={isBusy}
+                        variant={`danger ${isBusy ? "disabled-votes" : ''} ${isWorking ? "progress-votes" : ''}`}
                         onClick={() => votes > 0 ? thumbHandling(id, false) : []}>
                     <FaThumbsDown/>
                 </Button>
@@ -63,7 +75,8 @@ PostSummary.propTypes = {
     author: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,
     votesHandling: PropTypes.func.isRequired,
-    request: PropTypes.object.isRequired
+    request: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired
 };
 
 export default PostSummary;

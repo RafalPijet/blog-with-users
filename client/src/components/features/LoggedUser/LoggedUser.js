@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const LoggedUser = ({hidden, firstName, lastName}) => (
-  <p hidden={hidden}>{`${firstName} ${lastName}`}</p>
+    <p hidden={hidden}><span>logged as:</span>{` ${firstName} ${lastName}`}</p>
 );
 
 LoggedUser.propTypes = {

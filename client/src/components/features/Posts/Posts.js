@@ -23,13 +23,13 @@ class Posts extends React.Component {
     };
 
     render() {
-        const {posts, request, pages, presentPage, isActive} = this.props;
+        const {posts, request, pages, presentPage, isActive, user} = this.props;
         const {votesHandling, changePostsHandling} = this;
 
         if ((!request.pending && request.success && posts.length > 0) || request.votes) {
             return (
                 <div>
-                    <PostsList posts={posts} votesHandling={votesHandling} request={request}/>
+                    <PostsList user={user} posts={posts} votesHandling={votesHandling} request={request}/>
                     <Pagination isActive={isActive} pages={pages}
                                 onPageChange={changePostsHandling} presentPage={presentPage}/>
                 </div>
@@ -59,7 +59,8 @@ Posts.propTypes = {
     loadPosts: PropTypes.func.isRequired,
     postsPerPage: PropTypes.number,
     isActive: PropTypes.bool,
-    isLastPosts: PropTypes.bool
+    isLastPosts: PropTypes.bool,
+    user: PropTypes.object.isRequired
 };
 
 export default Posts;
