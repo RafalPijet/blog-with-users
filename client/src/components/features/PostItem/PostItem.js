@@ -7,6 +7,7 @@ import HtmlBox from "../../common/HtmlBox/HtmlBox";
 import Button from "../../common/Button/Button";
 import SpinnerRequest from '../../common/SpinnerRequest/SpinnerRequest';
 import Alert from '../../common/Alert/Alert';
+import Comments from '../Comments/CommentsContainer';
 import './PostItem.scss';
 
 class PostItem extends React.Component {
@@ -56,6 +57,7 @@ class PostItem extends React.Component {
                     <Link hidden={this.props.isRandom} to={`${presentPage === 1 ? "/" : "/posts"}`}>
                         <Button variant="info">{`Back to ${presentPage === 1 ? "last posts" : "posts"}`}</Button>
                     </Link>
+                    <Comments postId={singlePost.id} postAuthor={singlePost.author}/>
                 </div>
             )
         } else if (request.pending && request.success === null) {
