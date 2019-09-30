@@ -6,7 +6,8 @@ const Post = new Schema({
     title: {type: "String", required: true},
     content: {type: "String", required: true},
     author: {type: "String"},
-    votes: {type: "Number", required: true}
+    votes: {type: "Number", required: true},
+    comments: [{type: Schema.ObjectId, ref: "Comment"}]
 });
 
 module.exports = mongoose.model("Post", Post);

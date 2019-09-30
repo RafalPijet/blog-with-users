@@ -9,7 +9,10 @@ const Logout = props => {
     setLogin(false);
     resetRequest();
     return (
-        <Redirect to="/"/>
+        <div>
+            <Redirect to="/"/>
+        </div>
+
     )
 };
 

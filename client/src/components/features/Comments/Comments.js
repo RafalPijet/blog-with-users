@@ -6,11 +6,11 @@ import Button from "../../common/Button/Button";
 class Comments extends React.Component {
     state = {
         isAddVisible: false,
-        comment: ''
+        content: ''
     };
 
     handleComment = event => {
-        this.setState({comment: event.target.value});
+        this.setState({content: event.target.value});
     };
 
     handleAddComment = () => {
