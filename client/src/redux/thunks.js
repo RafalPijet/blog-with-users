@@ -181,15 +181,13 @@ export const addUser = user => {
 export const addCommentToPost = payload => {
     return async dispatch => {
 
-        // dispatch(beginSetVotes());
+        dispatch(beginSetVotes());
 
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.post(`${API_URL}/posts/comment`, payload);
-            let singlePost = await res.data;
-            console.log(singlePost);
-            await dispatch(loadPost(singlePost));
-            // dispatch(stopRequest());
+            dispatch(loadPost(res.data));
+            dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(err.message))
         }

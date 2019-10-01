@@ -38,7 +38,7 @@ class PostItem extends React.Component {
         const {request, presentPage, user} = this.props;
         const {randomHandling} = this;
 
-        if (!request.pending && request.success) {
+        if (!request.pending && request.success || request.votes) {
             return (
                 <div>
                     <SmallTitle>{singlePost.title}</SmallTitle>

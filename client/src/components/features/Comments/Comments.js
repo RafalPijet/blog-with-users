@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Comments.scss';
 import Button from "../../common/Button/Button";
+import CommentsList from '../CommentsList/CommentsList';
 
 class Comments extends React.Component {
     state = {
@@ -13,6 +14,16 @@ class Comments extends React.Component {
     componentDidMount() {
         const {comments} = this.props.singlePost;
         this.setState({comments})
+    }
+
+    componentWillReceiveProps(nextProps) {
+
+        if (!nextProps.request.votes) {
+            this.setState({
+                isAddVisible: false,
+                comment: ''
+            })
+        }
     }
 
     handleComment = event => {
@@ -34,7 +45,7 @@ class Comments extends React.Component {
     render() {
         const {isAddVisible, comment} = this.state;
         const {handleComment, handleAddComment} = this;
-        const {amount} = this.props;
+        const {amount, request, singlePost} = this.props;
 
         return (
             <div className="comments-main">
@@ -50,11 +61,13 @@ class Comments extends React.Component {
                         value={comment}
                     />
                     <Button
-                        variant="success"
+                        variant={request.votes ? " comments-progress" : "success"}
+                        disabled={request.votes}
                         hidden={!isAddVisible}
                         onClick={handleAddComment}
                     >Add</Button>
                 </div>
+                <CommentsList comments={singlePost.comments}/>
             </div>
         )
     }

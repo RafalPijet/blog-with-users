@@ -1,0 +1,21 @@
+@import '../../../styles/settings';
+
+.comment-info {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-size: 12px;
+    width: fit-content;
+    margin: 0;
+  }
+
+  & p:first-child {
+    color: $color-info;
+    font-weight: 500;
+  }
+
+  & p:last-child {
+    color: $color-success-back;
+  }
+}
