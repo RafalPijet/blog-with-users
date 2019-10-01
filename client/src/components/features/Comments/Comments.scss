@@ -21,15 +21,24 @@
 .comments-edit {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 
   input {
-    border: none;
+    border: 1px solid $color-comment-border;
     padding: 20px 10px;
     outline: none;
+    width: 100%;
+    margin: 10px 0;
   }
+}
+
+.add-button {
+  height: 40px;
+  margin-left: 20px;
 }
 
 .comments-progress {
   cursor: progress;
 }
+

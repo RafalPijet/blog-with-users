@@ -39,7 +39,10 @@ class Comments extends React.Component {
             content: comment,
             author: `${user.firstName} ${user.lastName}`
         };
-        addComment(payload)
+
+        if (comment.length !== 0) {
+            addComment(payload);
+        }
     };
 
     render() {
@@ -61,7 +64,7 @@ class Comments extends React.Component {
                         value={comment}
                     />
                     <Button
-                        variant={request.votes ? " comments-progress" : "success"}
+                        variant={`${request.votes ? " comments-progress" : "success"} add-button`}
                         disabled={request.votes}
                         hidden={!isAddVisible}
                         onClick={handleAddComment}
