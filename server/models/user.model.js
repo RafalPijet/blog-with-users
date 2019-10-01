@@ -10,4 +10,11 @@ const User = new Schema({
     posts: [{type: Schema.ObjectId, ref: "Post"}]
 });
 
+function populatePosts(next) {
+    this.populate('posts');
+    next();
+}
+
+User.pre('findOne', populatePosts);
+
 module.exports = mongoose.model("User", User);

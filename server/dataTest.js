@@ -52,8 +52,8 @@ const loadTestData = async () => {
             firstUser.save();
             secondPost.save();
             secondUser.save();
+            console.log('Test data has been successfuly loaded');
         }
-        console.log('Test data has been successfuly loaded');
     } catch (err) {
         console.log('Couldn\'t load test data: ' + err);
     }

@@ -57,7 +57,7 @@ class PostItem extends React.Component {
                     <Link hidden={this.props.isRandom} to={`${presentPage === 1 ? "/" : "/posts"}`}>
                         <Button variant="info">{`Back to ${presentPage === 1 ? "last posts" : "posts"}`}</Button>
                     </Link>
-                    <Comments postId={singlePost.id} postAuthor={singlePost.author}/>
+                    {singlePost !== '' ? <Comments/> : ''}
                 </div>
             )
         } else if (request.pending && request.success === null) {
@@ -78,7 +78,8 @@ PostItem.propTypes = {
         title: PropTypes.string,
         content: PropTypes.string,
         author: PropTypes.string,
-        votes: PropTypes.number
+        votes: PropTypes.number,
+        comments: PropTypes.array
     }),
     request: PropTypes.object.isRequired,
     loadPost: PropTypes.func.isRequired,

@@ -6,25 +6,40 @@ import Button from "../../common/Button/Button";
 class Comments extends React.Component {
     state = {
         isAddVisible: false,
-        content: ''
+        comment: '',
+        comments: []
     };
 
+    componentDidMount() {
+        const {comments} = this.props.singlePost;
+        this.setState({comments})
+    }
+
     handleComment = event => {
-        this.setState({content: event.target.value});
+        this.setState({comment: event.target.value});
     };
 
     handleAddComment = () => {
-        const {postId, postAuthor} = this.props;
+        const {id} = this.props.singlePost;
+        const {addComment, user} = this.props;
+        const {comment} = this.state;
+        let payload = {
+            postId: id,
+            content: comment,
+            author: `${user.firstName} ${user.lastName}`
+        };
+        addComment(payload)
     };
 
     render() {
         const {isAddVisible, comment} = this.state;
         const {handleComment, handleAddComment} = this;
+        const {amount} = this.props;
 
         return (
             <div className="comments-main">
                 <div className="comments-info">
-                    <p>Amount of comments</p>
+                    <p>{amount} {amount === 1 ? "comment" : "comments"}</p>
                     <p>Sort by</p>
                 </div>
                 <div className="comments-edit">
@@ -46,8 +61,11 @@ class Comments extends React.Component {
 }
 
 Comments.propTypes = {
-    postId: PropTypes.string,
-    postAuthor: PropTypes.string
+    singlePost: PropTypes.object.isRequired,
+    request: PropTypes.object.isRequired,
+    user: PropTypes.object.isRequired,
+    addComment: PropTypes.func.isRequired,
+    amount: PropTypes.number.isRequired
 };
 
 export default Comments;

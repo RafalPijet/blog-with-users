@@ -1,5 +1,6 @@
 const Post = require('../models/post.model');
 const User = require('../models/user.model');
+const Comment = require('../models/comment.model');
 const uuid = require('uuid');
 
 exports.getPosts = async (req, res) => {
@@ -100,6 +101,20 @@ exports.getPostsWithRange = async (req, res) => {
             selectedPosts,
             amount
         });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+};
+
+exports.addComment = async (req, res) => {
+
+    try {
+        let targetPost = await Post.findOne({id: req.body.postId});
+        let comment = await new Comment(req.body);
+        targetPost.comments.push(comment);
+        await comment.save();
+        let updatedPost = await targetPost.save();
+        res.status(200).json(updatedPost);
     } catch (err) {
         res.status(500).json(err)
     }

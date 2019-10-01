@@ -11,7 +11,7 @@ exports.getUserByLogin = async (req, res) => {
 };
 
 exports.addUser = async (req, res) => {
-    
+
     try {
         let newUser = new User(req.body);
         newUser.id = uuid.v4();
