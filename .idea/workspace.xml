@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0236758e-7270-4ceb-a72e-d116c0a1bf79" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/features/Comments/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/Comments/Comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/features/PostItem/PostItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/PostItem/PostItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/styles/settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/styles/settings.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/post.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/post.controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -218,9 +214,9 @@
         </splitter>
       </split-first>
       <split-second>
-        <splitter split-orientation="horizontal" split-proportion="0.8993056">
+        <splitter split-orientation="horizontal" split-proportion="0.83206105">
           <split-first>
-            <splitter split-orientation="vertical" split-proportion="0.1">
+            <splitter split-orientation="vertical" split-proportion="0.20574163">
               <split-first>
                 <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                   <file pinned="false" current-in-tab="false">
@@ -247,8 +243,8 @@
                   <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="-510">
-                          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+                        <state relative-caret-position="-725">
+                          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
                           </folding>
@@ -310,15 +306,6 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="false">
-                    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-                      <provider selected="true" editor-type-id="text-editor">
-                        <state>
-                          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-                        </state>
-                      </provider>
-                    </entry>
-                  </file>
                 </leaf>
               </split-first>
               <split-second>
@@ -351,15 +338,6 @@
                     </entry>
                   </file>
                   <file pinned="false" current-in-tab="false">
-                    <entry file="file://$PROJECT_DIR$/client/src/redux/store.js">
-                      <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="110">
-                          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-                        </state>
-                      </provider>
-                    </entry>
-                  </file>
-                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="231">
@@ -371,7 +349,7 @@
                   <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="244">
+                        <state relative-caret-position="510">
                           <caret line="35" column="11" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="11" />
                         </state>
                       </provider>
@@ -380,8 +358,8 @@
                   <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="-131">
-                          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+                        <state relative-caret-position="-52">
+                          <caret line="49" column="85" lean-forward="true" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
                           </folding>
@@ -902,16 +880,15 @@
       <workItem from="1569827336725" duration="1012000" />
       <workItem from="1569832197129" duration="4109000" />
       <workItem from="1569845786410" duration="415000" />
-      <workItem from="1569846468483" duration="34321000" />
+      <workItem from="1569846468483" duration="47422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277342000" />
+    <option name="totallyTimeSpent" value="290443000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1335" extended-state="6" />
-    <editor active="true" />
+    <frame x="1" y="23" width="2560" height="1335" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.100079425" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -953,34 +930,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/features/UserForm/UserFormContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/redux/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/layouts/MainLayout/MainLayout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/PostSummary/PostSummary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -1273,13 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/PostItem/PostItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1301,10 +1243,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/features/PostItem/PostItemContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/features/UserForm/UserFormContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="43" column="32" lean-forward="true" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        <state relative-caret-position="-725">
+          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1313,8 +1296,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        <state relative-caret-position="-52">
+          <caret line="49" column="85" lean-forward="true" selection-start-line="49" selection-start-column="85" selection-end-line="49" selection-end-column="85" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

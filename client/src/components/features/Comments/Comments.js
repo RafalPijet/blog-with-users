@@ -8,7 +8,8 @@ class Comments extends React.Component {
     state = {
         isAddVisible: false,
         comment: '',
-        comments: []
+        comments: [],
+        sortValue: "newest"
     };
 
     componentDidMount() {
@@ -25,6 +26,10 @@ class Comments extends React.Component {
             })
         }
     }
+
+    handleSortType = event => {
+        this.setState({sortValue: event.target.value});
+    };
 
     handleComment = event => {
         this.setState({comment: event.target.value});
@@ -46,15 +51,25 @@ class Comments extends React.Component {
     };
 
     render() {
-        const {isAddVisible, comment} = this.state;
-        const {handleComment, handleAddComment} = this;
+        const {isAddVisible, comment, sortValue} = this.state;
+        const {handleComment, handleAddComment, handleSortType} = this;
         const {amount, request, singlePost} = this.props;
 
         return (
             <div className="comments-main">
                 <div className="comments-info">
                     <p>{amount} {amount === 1 ? "comment" : "comments"}</p>
-                    <p>Sort by</p>
+                    <div>
+                        <label htmlFor="selectSort">Sort by: </label>
+                        <select id="selectSort" value={sortValue} onChange={handleSortType}>
+                            <optgroup label="Sort Type">
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="a-z">User A-Z</option>
+                                <option value="z-a">User Z-A</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </div>
                 <div className="comments-edit">
                     <input
@@ -70,7 +85,7 @@ class Comments extends React.Component {
                         onClick={handleAddComment}
                     >Add</Button>
                 </div>
-                <CommentsList comments={singlePost.comments}/>
+                <CommentsList sortValue={sortValue} comments={singlePost.comments}/>
             </div>
         )
     }
