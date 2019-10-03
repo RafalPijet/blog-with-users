@@ -11,13 +11,25 @@ class Pagination extends React.Component {
     };
 
     componentDidMount() {
-        const {pages, presentPage} = this.props;
-        this.setState({presentPage: presentPage});
+        const {presentPage} = this.props;
+        this.setArrows(presentPage);
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+
+        if (nextProps.presentPage) {
+            this.setArrows(nextProps.presentPage);
+        }
+    }
+
+    setArrows = async (presentPage) => {
+        const {pages} = this.props;
+        await this.setState({presentPage: presentPage});
         presentPage > 1 ? this.setState({leftArrowIsHidden: false}) :
             this.setState({leftArrowIsHidden: true});
         presentPage < pages ? this.setState({rightArrowIsHidden: false}) :
             this.setState({rightArrowIsHidden: true});
-    }
+    };
 
     changePage = async (newPage, isUp) => {
         const {onPageChange} = this.props;
@@ -37,6 +49,7 @@ class Pagination extends React.Component {
         const {pages} = this.props;
         const {presentPage, leftArrowIsHidden, rightArrowIsHidden, isActive} = this.state;
         const {changePage} = this;
+
         return (
             <div hidden={!isActive} className="pagination">
                 <ul className="pagination__list">

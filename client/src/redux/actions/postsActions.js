@@ -23,3 +23,4 @@ export const getPost = store => store.posts.singlePost;
 export const getAmountOfComments = store => store.posts.singlePost.comments.length;
 export const getInitialPaginationPage = store => store.posts.initialPage;
 export const getPaginationPages = store => Math.ceil(store.posts.amount / store.posts.postsPerPage);
+

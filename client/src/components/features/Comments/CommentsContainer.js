@@ -13,7 +13,7 @@ const mapStateToProps = store => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    addComment: payload => dispatch(addCommentToPost(payload))
+    addComment: payload => dispatch(addCommentToPost(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Comments)

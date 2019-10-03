@@ -4,99 +4,6 @@ import './CommentsList.scss';
 
 class CommentsList extends React.Component {
 
-    state = {
-        comments: [],
-        sortValue: this.props.sortValue
-    };
-
-    componentDidMount() {
-        const {comments} = this.props;
-        this.setState({comments});
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const {sortValue} = nextProps;
-        const {handlingSort} = this;
-
-        if (sortValue) {
-            handlingSort(sortValue);
-        }
-    }
-
-    handlingSort = async sortValue => {
-        const {comments} = this.props;
-        const {compareDatesFromOldest, compareDatesFromNewest, compareUsersAz, compareUsersZa} = this;
-        await this.setState({sortValue});
-        let unsorted = [];
-        let sorted = [];
-
-        if (this.state.sortValue === "oldest" || this.state.sortValue === "newest") {
-            let temp = [];
-            comments.forEach(comment => {
-                let value = Date.parse(comment.dateAdded);
-                let item = {
-                    value: value,
-                    comment: comment
-                };
-                unsorted.push(item);
-            });
-            this.state.sortValue === "oldest" ? temp = unsorted.sort(compareDatesFromOldest) :
-                temp = unsorted.sort(compareDatesFromNewest);
-            temp.forEach(item => {
-                sorted.push(item.comment);
-            });
-        } else {
-            unsorted = comments;
-            this.state.sortValue === "a-z" ? sorted = unsorted.sort(compareUsersAz) :
-                sorted = unsorted.sort(compareUsersZa);
-        }
-        this.setState({comments: sorted});
-    };
-
-    compareDatesFromOldest = (a, b) => {
-        let comparision = 0;
-
-        if (a.value > b.value) {
-            comparision = 1;
-        } else if (a.value < b.value) {
-            comparision = -1;
-        }
-        return comparision;
-    };
-
-    compareDatesFromNewest = (a, b) => {
-        let comparision = 0;
-
-        if (a.value < b.value) {
-            comparision = 1;
-        } else if (a.value > b.value) {
-            comparision = -1;
-        }
-        return comparision;
-    };
-
-    compareUsersAz = (a, b) => {
-        let comparision = 0;
-
-        if (a.author > b.author) {
-            comparision = 1;
-        } else if (a.author < b.author) {
-            comparision = -1;
-        }
-        return comparision
-    };
-
-    compareUsersZa = (a, b) => {
-        let comparision = 0;
-
-        if (a.author < b.author) {
-            comparision = 1;
-        } else if (a.author > b.author) {
-            comparision = -1;
-        }
-        return comparision
-    };
-
     countDate = dateAdded => {
         let min = 0;
         let hrs = 0;
@@ -135,7 +42,7 @@ class CommentsList extends React.Component {
     };
 
     render() {
-        const {comments} = this.state;
+        const {comments} = this.props;
         const {countDate} = this;
         return (
             <div>
