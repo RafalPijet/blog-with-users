@@ -13,6 +13,7 @@ class NavBar extends React.Component {
             {path: "/posts", title: "Posts"},
             {path: "/posts/random", title: "Random post"},
             {path: "/contact", title: "Contact"},
+            {path: "/user", title: "User Posts"},
             {path: "/logout", title: "logOut"}
         ],
         loginLinks: [

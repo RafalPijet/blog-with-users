@@ -14,6 +14,7 @@ import AddPost from './components/pages/AddPost/AddPost';
 import RandomPost from './components/pages/RandomPost/RandomPost';
 import SinglePost from './components/pages/SinglePost/SinglePost';
 import EditPost from './components/pages/EditPost/EditPost';
+import UserPosts from './components/pages/UserPosts/UserPosts';
 import Logout from './components/pages/Logout/Logout';
 
 class App extends React.Component {
@@ -32,6 +33,7 @@ class App extends React.Component {
                         <Route path="/posts/random" exact component={RandomPost}/>
                         <Route path="/posts/:id" exact component={SinglePost}/>
                         <Route path="/contact" exact component={Contact}/>
+                        <Route path="/user" exact component={UserPosts}/>
                         <Route path="/logout" exact component={Logout}/>
                         <Route component={PageNotFound}/>
                     </Switch>
