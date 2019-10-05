@@ -1,23 +1,10 @@
 import axios from "axios";
 import {API_URL} from "../config";
-import {loadPosts, loadPost, thumbUp, thumbDown, loadPostsByRange} from "./actions/postsActions";
+import {loadPost, thumbUp, thumbDown, loadPostsByRange} from "./actions/postsActions";
 import {startRequest, stopRequest, errorRequest, beginSetVotes, resetRequest} from "./actions/requestActions";
-import {setLogin, setUser} from "./actions/usersActions";
-
-export const loadPostsRequest = () => {
-    return async dispatch => {
-
-        try {
-            dispatch(startRequest());
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            let res = await axios.get(`${API_URL}/posts`);
-            dispatch(loadPosts(res.data));
-            dispatch(stopRequest());
-        } catch (err) {
-            dispatch(errorRequest(err.message));
-        }
-    }
-};
+import {setLogin, setUser, updateUserPost, getUser, addUserComment} from "./actions/usersActions";
+import store from './store';
+import {checkUserPosts} from "../utils/functions";
 
 export const loadPostRequest = id => {
     return async dispatch => {
@@ -64,7 +51,8 @@ export const updatePostRequest = post => {
 
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
-            await axios.put(`${API_URL}/posts`, post);
+            let res = await axios.put(`${API_URL}/posts`, post);
+            dispatch(updateUserPost(res.data));
             dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(err.message));
@@ -186,7 +174,12 @@ export const addCommentToPost = payload => {
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.post(`${API_URL}/posts/comment`, payload);
-            dispatch(loadPost(res.data));
+            dispatch(loadPost(res.data.post));
+            let loggedUser = await getUser(store.getState());
+
+            if (checkUserPosts(loggedUser, res.data.post.id)) {
+                dispatch(addUserComment(res.data.comment))
+            }
             dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(err.message))

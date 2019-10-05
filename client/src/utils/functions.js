@@ -19,4 +19,13 @@ export const cutText = (content, maxLength) => {
         return "Error";
     }
 };
+export const checkUserPosts = (user, postId) => {
+    let result = false;
+    user.posts.forEach(post => {
+
+        if (post.id === postId) {
+            result = true
+        }});
+    return result
+};
 

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0236758e-7270-4ceb-a72e-d116c0a1bf79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/pages/UserPosts/UserPosts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/actions/usersActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/actions/usersActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/redux/thunks.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/redux/thunks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/post.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/post.controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,9 +19,9 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.2577365">
+    <splitter split-orientation="horizontal" split-proportion="0.38716814">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.45837322">
+        <splitter split-orientation="vertical" split-proportion="0.43093923">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
@@ -32,11 +33,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/client/src/redux/actions/usersActions.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="308">
-                      <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+                    <state relative-caret-position="266">
+                      <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
                     </state>
                   </provider>
                 </entry>
@@ -44,7 +45,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/client/src/redux/actions/postsActions.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="198">
+                    <state relative-caret-position="-19">
                       <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
                     </state>
                   </provider>
@@ -61,7 +62,7 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/client/src/components/common/Pagination/Pagination.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="198">
@@ -76,8 +77,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/server/routes/post.routes.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="198">
-                      <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+                    <state relative-caret-position="176">
+                      <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
                     </state>
                   </provider>
                 </entry>
@@ -94,17 +95,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/server/dataTest.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1232">
+                    <state relative-caret-position="520">
                       <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/server/controllers/user.controller.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="176">
-                      <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
                     </state>
                   </provider>
                 </entry>
@@ -113,11 +105,11 @@
           </split-first>
           <split-second>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/client/src/redux/thunks.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="4114">
-                      <caret line="191" column="47" selection-start-line="191" selection-start-column="47" selection-end-line="191" selection-end-column="47" />
+                    <state relative-caret-position="415">
+                      <caret line="181" column="13" lean-forward="true" selection-start-line="181" selection-start-column="13" selection-end-line="181" selection-end-column="13" />
                       <folding>
                         <element signature="e#0#26#0" expanded="true" />
                       </folding>
@@ -158,13 +150,13 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/server/controllers/post.controller.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="2464">
-                      <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+                    <state relative-caret-position="417">
+                      <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
                     </state>
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/CommentsContainer.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="132">
@@ -209,12 +201,12 @@
         </splitter>
       </split-first>
       <split-second>
-        <splitter split-orientation="horizontal" split-proportion="0.5307096">
+        <splitter split-orientation="horizontal" split-proportion="0.43465704">
           <split-first>
             <splitter split-orientation="vertical" split-proportion="0.47053406">
               <split-first>
                 <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                  <file pinned="false" current-in-tab="true">
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/App.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="361">
@@ -241,7 +233,7 @@
                   <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="183">
+                        <state relative-caret-position="-1425">
                           <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
                           <folding>
                             <element signature="e#0#26#0" expanded="true" />
@@ -253,8 +245,29 @@
                   <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/server/routes/user.routes.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="110">
-                          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+                        <state relative-caret-position="176">
+                          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="176">
+                          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+                          <folding>
+                            <element signature="e#0#26#0" expanded="true" />
+                          </folding>
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file pinned="false" current-in-tab="true">
+                    <entry file="file://$PROJECT_DIR$/client/src/utils/functions.js">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="375">
+                          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
                         </state>
                       </provider>
                     </entry>
@@ -321,6 +334,15 @@
                     </entry>
                   </file>
                   <file pinned="false" current-in-tab="false">
+                    <entry file="file://$PROJECT_DIR$/server/controllers/user.controller.js">
+                      <provider selected="true" editor-type-id="text-editor">
+                        <state relative-caret-position="176">
+                          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+                        </state>
+                      </provider>
+                    </entry>
+                  </file>
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/UserForm/UserFormContainer.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="220">
@@ -329,11 +351,11 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="false">
+                  <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="286">
-                          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+                        <state relative-caret-position="22">
+                          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
                         </state>
                       </provider>
                     </entry>
@@ -347,7 +369,7 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="true">
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/pages/UserPosts/UserPosts.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="110">
@@ -391,7 +413,7 @@
             </splitter>
           </split-first>
           <split-second>
-            <splitter split-orientation="vertical" split-proportion="0.4815838">
+            <splitter split-orientation="vertical" split-proportion="0.6878453">
               <split-first>
                 <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
                   <file pinned="false" current-in-tab="false">
@@ -433,11 +455,11 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="false">
+                  <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="66">
-                          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+                        <state relative-caret-position="440">
+                          <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
                         </state>
                       </provider>
                     </entry>
@@ -456,7 +478,7 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="true">
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/pages/SinglePost/SinglePost.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state>
@@ -492,7 +514,7 @@
               </split-first>
               <split-second>
                 <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-                  <file pinned="false" current-in-tab="true">
+                  <file pinned="false" current-in-tab="false">
                     <entry file="file://$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.js">
                       <provider selected="true" editor-type-id="text-editor">
                         <state relative-caret-position="202">
@@ -538,10 +560,10 @@
                       </provider>
                     </entry>
                   </file>
-                  <file pinned="false" current-in-tab="false">
+                  <file pinned="false" current-in-tab="true">
                     <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/postsReducer.js">
                       <provider selected="true" editor-type-id="text-editor">
-                        <state relative-caret-position="22">
+                        <state relative-caret-position="-484">
                           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
                         </state>
                       </provider>
@@ -595,15 +617,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/client/src/components/common/Alert/Alert.js" />
         <option value="$PROJECT_DIR$/client/src/components/pages/Registration/Registration.js" />
         <option value="$PROJECT_DIR$/client/src/components/common/TextField/TextField.scss" />
         <option value="$PROJECT_DIR$/server/routes/user.routes.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/UserForm/UserFormContainer.js" />
         <option value="$PROJECT_DIR$/client/src/components/layouts/MainMenu/MainMenu.js" />
         <option value="$PROJECT_DIR$/client/src/components/pages/Welcome/Welcome.js" />
-        <option value="$PROJECT_DIR$/client/src/redux/actions/usersActions.js" />
         <option value="$PROJECT_DIR$/client/src/components/layouts/MainLayout/MainLayout.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/LoggedUser/LoggedUser.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.scss" />
@@ -622,19 +641,15 @@
         <option value="$PROJECT_DIR$/client/src/components/features/Commentary/Commentary.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/UserForm/UserForm.js" />
         <option value="$PROJECT_DIR$/client/src/components/pages/Logout/Logout.js" />
-        <option value="$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js" />
-        <option value="$PROJECT_DIR$/server/routes/post.routes.js" />
         <option value="$PROJECT_DIR$/server/dataTest.js" />
         <option value="$PROJECT_DIR$/server/models/post.model.js" />
         <option value="$PROJECT_DIR$/server/models/user.model.js" />
         <option value="$PROJECT_DIR$/server/controllers/user.controller.js" />
-        <option value="$PROJECT_DIR$/client/src/redux/thunks.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/CommentsList.js" />
         <option value="$PROJECT_DIR$/client/src/styles/settings.scss" />
         <option value="$PROJECT_DIR$/client/src/components/features/CommentsList/CommentsList.scss" />
         <option value="$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss" />
         <option value="$PROJECT_DIR$/client/src/components/features/PostItem/PostItem.js" />
-        <option value="$PROJECT_DIR$/server/controllers/post.controller.js" />
         <option value="$PROJECT_DIR$/server/models/comment.model.js" />
         <option value="$PROJECT_DIR$/client/package.json" />
         <option value="$PROJECT_DIR$/client/src/redux/reducers/postsReducer.js" />
@@ -646,6 +661,13 @@
         <option value="$PROJECT_DIR$/client/src/components/pages/UserPosts/UserPosts.js" />
         <option value="$PROJECT_DIR$/client/src/components/features/NavBar/NavBar.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
+        <option value="$PROJECT_DIR$/server/routes/post.routes.js" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/utils/functions.js" />
+        <option value="$PROJECT_DIR$/server/controllers/post.controller.js" />
+        <option value="$PROJECT_DIR$/client/src/redux/actions/usersActions.js" />
+        <option value="$PROJECT_DIR$/client/src/redux/thunks.js" />
+        <option value="$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js" />
       </list>
     </option>
   </component>
@@ -798,6 +820,12 @@
             </path>
             <path>
               <item name="blog-with-users" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog-with-users" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -897,12 +925,12 @@
       <workItem from="1569846468483" duration="56088000" />
       <workItem from="1570091842872" duration="9106000" />
       <workItem from="1570103294115" duration="7978000" />
-      <workItem from="1570113703322" duration="1033000" />
+      <workItem from="1570113703322" duration="15349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317226000" />
+    <option name="totallyTimeSpent" value="331542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="2560" height="1335" extended-state="6" />
@@ -948,82 +976,10 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server/routes/post.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/dataTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/user.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/common/Pagination/Pagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/redux/thunks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4114">
-          <caret line="191" column="47" selection-start-line="191" selection-start-column="47" selection-end-line="191" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/features/LoggedUser/LoggedUser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/pages/Logout/Logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/styles/settings.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="19" selection-start-line="3" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/post.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2464">
-          <caret line="112" column="50" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1067,13 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/user.routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/PostForm/PostForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1105,16 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -1133,13 +1072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1182,13 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1270,22 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/pages/SinglePost/SinglePost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/postsReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1317,6 +1226,122 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/dataTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="56" column="19" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/user.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/post.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="48" lean-forward="true" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/pages/SinglePost/SinglePost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/postsReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-484">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/routes/user.routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/actions/postsActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/features/Comments/Comments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1425">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/user.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/post.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="120" column="36" selection-start-line="120" selection-start-column="36" selection-end-line="120" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/utils/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/actions/usersActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/thunks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="181" column="13" lean-forward="true" selection-start-line="181" selection-start-column="13" selection-end-line="181" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/redux/reducers/usersReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
         </state>
       </provider>
     </entry>

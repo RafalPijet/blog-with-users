@@ -112,9 +112,13 @@ exports.addComment = async (req, res) => {
         let targetPost = await Post.findOne({id: req.body.postId});
         let comment = await new Comment(req.body);
         targetPost.comments.unshift(comment);
-        await comment.save();
+        let savedComment = await comment.save();
         let updatedPost = await targetPost.save();
-        res.status(200).json(updatedPost);
+        let payload = {
+            comment: savedComment,
+            post: updatedPost
+        };
+        res.status(200).json(payload);
     } catch (err) {
         res.status(500).json(err)
     }
