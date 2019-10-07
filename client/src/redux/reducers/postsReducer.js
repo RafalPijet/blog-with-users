@@ -1,4 +1,4 @@
-import {LOAD_POSTS, LOAD_POST, THUMB_UP, THUMB_DOWN, LOAD_POSTS_RANGE} from "../actions/postsActions";
+import {LOAD_POST, THUMB_UP, THUMB_DOWN, LOAD_POSTS_RANGE} from "../actions/postsActions";
 
 const initialState = {
     data: [],
@@ -10,8 +10,6 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
-        case LOAD_POSTS:
-            return {...state, data: action.payload};
         case LOAD_POST:
             return {...state, singlePost: action.post};
         case LOAD_POSTS_RANGE:

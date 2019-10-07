@@ -8,8 +8,14 @@ import Pagination from "../../common/Pagination/Pagination";
 class Posts extends React.Component {
 
     componentDidMount() {
-        const {loadPosts, presentPage, postsPerPage, isLastPosts} = this.props;
-        isLastPosts ? loadPosts(1, postsPerPage || 3) : loadPosts(presentPage, postsPerPage || 3);
+        const {loadPosts, presentPage, postsPerPage, isLastPosts, isUserPosts} = this.props;
+        const {prepareUserPosts} = this;
+
+        if (isUserPosts) {
+            prepareUserPosts(1);
+        } else {
+            isLastPosts ? loadPosts(1, postsPerPage || 3) : loadPosts(presentPage, postsPerPage || 3);
+        }
     }
 
     votesHandling = (id, isUp) => {
@@ -18,18 +24,32 @@ class Posts extends React.Component {
     };
 
     changePostsHandling = page => {
-        const {postsPerPage, loadPosts} = this.props;
-        loadPosts(page, postsPerPage || 3);
+        const {postsPerPage, loadPosts, isUserPosts} = this.props;
+        const {prepareUserPosts} = this;
+        isUserPosts ? prepareUserPosts(page) : loadPosts(page, postsPerPage || 3);
+    };
+
+    prepareUserPosts = page => {
+        const {postsPerPage, loadUserPosts, user} = this.props;
+        let payload = {
+            data: user.posts.slice((page - 1) * postsPerPage, (page - 1) * postsPerPage + postsPerPage),
+            amount: user.posts.length,
+            postsPerPage: postsPerPage,
+            initialPage: page
+        };
+        loadUserPosts(payload)
     };
 
     render() {
-        const {posts, request, pages, presentPage, isActive, user} = this.props;
+        const {posts, request, pages, presentPage, isActive, user, isUserPosts} = this.props;
         const {votesHandling, changePostsHandling} = this;
 
-        if ((!request.pending && request.success && posts.length > 0) || request.votes) {
+        if ((!request.pending && request.success && posts.length > 0) || request.votes ||
+            (isUserPosts && user.posts.length !== 0)) {
             return (
                 <div>
-                    <PostsList user={user} posts={posts} votesHandling={votesHandling} request={request}/>
+                    <PostsList user={user} posts={posts} votesHandling={votesHandling}
+                               request={request}/>
                     <Pagination isActive={isActive} pages={pages}
                                 onPageChange={changePostsHandling} presentPage={presentPage}/>
                 </div>
@@ -39,7 +59,8 @@ class Posts extends React.Component {
             return <SpinnerRequest/>
         } else if (!request.pending && request.error !== null) {
             return <Alert variant="error">{request.error}</Alert>
-        } else if (!request.pending && request.success === true && posts.length === 0) {
+        } else if ((!request.pending && request.success === true && posts.length === 0) ||
+            (isUserPosts && user.posts.length === 0)) {
             return <Alert variant="info">No posts</Alert>
         }
     }
@@ -57,10 +78,12 @@ Posts.propTypes = {
     ),
     request: PropTypes.object.isRequired,
     loadPosts: PropTypes.func.isRequired,
+    loadUserPosts: PropTypes.func.isRequired,
     postsPerPage: PropTypes.number,
     isActive: PropTypes.bool,
     isLastPosts: PropTypes.bool,
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
+    isUserPosts: PropTypes.bool
 };
 
 export default Posts;

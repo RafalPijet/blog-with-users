@@ -11,19 +11,18 @@ class Pagination extends React.Component {
     };
 
     componentDidMount() {
-        const {presentPage} = this.props;
-        this.setArrows(presentPage);
+        const {presentPage, pages} = this.props;
+        this.setArrows(presentPage, pages);
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
 
         if (nextProps.presentPage) {
-            this.setArrows(nextProps.presentPage);
+            this.setArrows(nextProps.presentPage, nextProps.pages);
         }
     }
 
-    setArrows = async (presentPage) => {
-        const {pages} = this.props;
+    setArrows = async (presentPage, pages) => {
         await this.setState({presentPage: presentPage});
         presentPage > 1 ? this.setState({leftArrowIsHidden: false}) :
             this.setState({leftArrowIsHidden: true});

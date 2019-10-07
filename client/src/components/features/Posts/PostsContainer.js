@@ -1,13 +1,14 @@
 import {connect} from 'react-redux';
 import Posts from './Posts';
-import {getPosts, getInitialPaginationPage, getPaginationPages} from "../../../redux/actions/postsActions";
+import {getPosts, getInitialPaginationPage, getPaginationPages, loadPostsByRange} from "../../../redux/actions/postsActions";
 import {getRequest} from "../../../redux/actions/requestActions";
 import {getUser} from "../../../redux/actions/usersActions";
 import {setThumbRequest, loadPostsByRangeRequest} from "../../../redux/thunks";
 
 const mapDispatchToProps = dispatch => ({
     loadPosts: (page, postsPerPage) => dispatch(loadPostsByRangeRequest(page, postsPerPage)),
-    setThumb: (id, isUp) => dispatch(setThumbRequest(id, isUp))
+    setThumb: (id, isUp) => dispatch(setThumbRequest(id, isUp)),
+    loadUserPosts: payload => dispatch(loadPostsByRange(payload))
 });
 
 const mapStateToProps = state => ({
