@@ -22,8 +22,7 @@ class Pagination extends React.Component {
         }
     }
 
-    setArrows = async (presentPage, pages) => {
-        await this.setState({presentPage: presentPage});
+    setArrows = (presentPage, pages) => {
         presentPage > 1 ? this.setState({leftArrowIsHidden: false}) :
             this.setState({leftArrowIsHidden: true});
         presentPage < pages ? this.setState({rightArrowIsHidden: false}) :
