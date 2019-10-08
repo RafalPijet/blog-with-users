@@ -27,7 +27,7 @@ PostsList.propTypes = {
     ),
     votesHandling: PropTypes.func.isRequired,
     request: PropTypes.object.isRequired,
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
 };
 
 export default PostsList

@@ -17,3 +17,4 @@ export const addUserComment = comment => ({comment, type: ADD_USER_COMMENT});
 // SELECTORS
 export const getLogin = store => store.users.isLogin;
 export const getUser = store => store.users.user;
+export const getAmountUserPosts = store => store.users.user.posts.length;
