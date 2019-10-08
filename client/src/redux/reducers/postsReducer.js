@@ -1,4 +1,4 @@
-import {LOAD_POST, THUMB_UP, THUMB_DOWN, LOAD_POSTS_RANGE} from "../actions/postsActions";
+import {LOAD_POST, THUMB_UP, THUMB_DOWN, LOAD_POSTS_RANGE, SET_INITIAL_PAGE} from "../actions/postsActions";
 
 const initialState = {
     data: [],
@@ -42,6 +42,8 @@ const reducer = (state = initialState, action = {}) => {
                     return post;
                 })
             };
+        case SET_INITIAL_PAGE:
+            return {...state, initialPage: action.value};
         default:
             return state;
     }

@@ -12,7 +12,7 @@ class Posts extends React.Component {
         const {prepareUserPosts} = this;
 
         if (isUserPosts) {
-            prepareUserPosts(1);
+            prepareUserPosts(presentPage);
         } else {
             isLastPosts ? loadPosts(1, postsPerPage || 3) : loadPosts(presentPage, postsPerPage || 3);
         }
