@@ -1,4 +1,10 @@
-import {SET_LOGIN, SET_USER, UPDATE_USER_POST, ADD_USER_COMMENT} from "../actions/usersActions";
+import {
+    SET_LOGIN,
+    SET_USER,
+    UPDATE_USER_POST,
+    ADD_USER_COMMENT,
+    REMOVE_USER_POST
+} from "../actions/usersActions";
 
 const initialState = {
     isLogin: false,
@@ -37,6 +43,13 @@ const reducer = (state = initialState, action) => {
                             return post;
                         }
                     })
+                }
+            };
+        case REMOVE_USER_POST:
+            return {
+                ...state,
+                user: {
+                    ...state.user, posts: state.user.posts.filter(post => (post.id !== action.id))
                 }
             };
         default:

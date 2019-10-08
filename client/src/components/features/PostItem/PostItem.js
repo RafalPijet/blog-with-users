@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import {Redirect} from "react-router";
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import HtmlBox from "../../common/HtmlBox/HtmlBox";
@@ -12,7 +13,8 @@ import './PostItem.scss';
 
 class PostItem extends React.Component {
     state = {
-        singlePost: ""
+        singlePost: "",
+        userPostCounter: this.props.amountUserPosts
     };
 
     componentDidMount() {
@@ -40,11 +42,13 @@ class PostItem extends React.Component {
     };
 
     render() {
-        const {singlePost} = this.state;
-        const {request, user, isRandom} = this.props;
+        const {singlePost, userPostCounter} = this.state;
+        const {request, user, isRandom, amountUserPosts} = this.props;
         const {randomHandling, removeHandling} = this;
 
-        if ((!request.pending && request.success) || (request.votes)) {
+        if (userPostCounter !== amountUserPosts) {
+            return <Redirect to='/user'/>
+        } else if ((!request.pending && request.success) || (request.votes)) {
             return (
                 <div>
                     <SmallTitle>{singlePost.title}</SmallTitle>
@@ -98,7 +102,8 @@ PostItem.propTypes = {
     id: PropTypes.string,
     isRandom: PropTypes.bool.isRequired,
     presentPage: PropTypes.number.isRequired,
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
+    amountUserPosts: PropTypes.number.isRequired
 };
 
 export default PostItem;
