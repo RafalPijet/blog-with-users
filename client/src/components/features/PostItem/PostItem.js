@@ -33,10 +33,16 @@ class PostItem extends React.Component {
         await this.setState({singlePost: this.props.singlePost});
     };
 
+    removeHandling = () => {
+        const {removePost} = this.props;
+        const {id} = this.state.singlePost;
+        removePost(id);
+    };
+
     render() {
         const {singlePost} = this.state;
-        const {request, presentPage, user} = this.props;
-        const {randomHandling} = this;
+        const {request, user, isRandom} = this.props;
+        const {randomHandling, removeHandling} = this;
 
         if ((!request.pending && request.success) || (request.votes)) {
             return (
@@ -47,14 +53,19 @@ class PostItem extends React.Component {
                         <SectionTitle>{singlePost.author}</SectionTitle>
                     </div>
                     <HtmlBox>{singlePost.content}</HtmlBox>
-                    <Link hidden={this.props.isRandom || singlePost.author !== `${user.firstName} ${user.lastName}`}
+                    <Link hidden={isRandom || singlePost.author !== `${user.firstName} ${user.lastName}`}
                           to="/posts/edit">
                         <Button variant="primary">Edit Post</Button>
                     </Link>
-                    <Button hidden={!this.props.isRandom}
+                    <Button hidden={!request.userPosts}
+                            variant="danger"
+                            onClick={() => removeHandling()}>Remove post
+                    </Button>
+                    <Button hidden={!isRandom}
                             onClick={() => randomHandling()}
-                            variant="primary">Random Post</Button>
-                    <Link hidden={this.props.isRandom} to={`${request.userPosts ? "/user" : "/posts"}`}>
+                            variant="primary">Random Post
+                    </Button>
+                    <Link hidden={isRandom} to={`${request.userPosts ? "/user" : "/posts"}`}>
                         <Button variant="info">{`Back to ${request.userPosts ? "user posts" : "posts"}`}</Button>
                     </Link>
                     {singlePost !== '' ? <Comments/> : ''}
@@ -83,6 +94,7 @@ PostItem.propTypes = {
     }),
     request: PropTypes.object.isRequired,
     loadPost: PropTypes.func.isRequired,
+    removePost: PropTypes.func.isRequired,
     id: PropTypes.string,
     isRandom: PropTypes.bool.isRequired,
     presentPage: PropTypes.number.isRequired,
