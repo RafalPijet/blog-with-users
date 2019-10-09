@@ -36,7 +36,7 @@ class UserPosts extends React.Component {
             <div>
                 <PageTitle>User Posts</PageTitle>
                 <PostsCounter/>
-                {remove ? <Alert isVisible={isVisible} variant="success">Post is removed</Alert> : <Posts isActive={true} isUserPosts={true} postsPerPage={3}/>}
+                {remove ? <Alert isVisible={isVisible} variant="success">Post has removed</Alert> : <Posts isActive={true} isUserPosts={true} postsPerPage={3}/>}
             </div>
         )
     }

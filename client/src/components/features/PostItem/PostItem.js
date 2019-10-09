@@ -8,12 +8,14 @@ import HtmlBox from "../../common/HtmlBox/HtmlBox";
 import Button from "../../common/Button/Button";
 import SpinnerRequest from '../../common/SpinnerRequest/SpinnerRequest';
 import Alert from '../../common/Alert/Alert';
+import Modal from '../../common/Modal/Modal';
 import Comments from '../Comments/CommentsContainer';
 import './PostItem.scss';
 
 class PostItem extends React.Component {
     state = {
-        singlePost: ""
+        singlePost: "",
+        modal: false
     };
 
     componentDidMount() {
@@ -35,15 +37,20 @@ class PostItem extends React.Component {
     };
 
     removeHandling = () => {
+        this.setState({modal: true})
+    };
+
+    confirmHandling = () => {
         const {removePost} = this.props;
         const {id} = this.state.singlePost;
+        this.setState({modal: false});
         removePost(id);
     };
 
     render() {
-        const {singlePost} = this.state;
+        const {singlePost, modal} = this.state;
         const {request, user, isRandom} = this.props;
-        const {randomHandling, removeHandling} = this;
+        const {randomHandling, removeHandling, confirmHandling} = this;
 
         if (request.remove) {
             return <Redirect to='/user'/>
@@ -71,6 +78,9 @@ class PostItem extends React.Component {
                     <Link hidden={isRandom} to={`${request.userPosts ? "/user" : "/posts"}`}>
                         <Button variant="info">{`Back to ${request.userPosts ? "user posts" : "posts"}`}</Button>
                     </Link>
+                    <Modal setModal={modal} headerContent="Are you sure?" confirmButton="Confirm remove"
+                           bodyContent="Confirmation will permanently delete the selected post ..."
+                           confirmHandling={confirmHandling}/>
                     {singlePost !== '' ? <Comments/> : ''}
                 </div>
             )
