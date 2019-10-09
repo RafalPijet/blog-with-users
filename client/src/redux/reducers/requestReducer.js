@@ -4,10 +4,11 @@ import {
     ERROR_REQUEST,
     RESET_REQUEST,
     BEGIN_SET_VOTES,
-    USER_POSTS_MODE
+    USER_POSTS_MODE,
+    REMOVE_REQUEST
 } from "../actions/requestActions";
 
-const initialState = {pending: false, error: null, success: null, votes: false, userPosts: false};
+const initialState = {pending: false, error: null, success: null, votes: false, userPosts: false, remove: false};
 
 const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
@@ -23,6 +24,8 @@ const reducer = (state = initialState, action = {}) => {
             return {...state, pending: false, error: null, success: null, votes: true};
         case USER_POSTS_MODE:
             return {...state, userPosts: action.isSet};
+        case REMOVE_REQUEST:
+            return {...state, remove: action.isSet};
         default:
             return state;
     }

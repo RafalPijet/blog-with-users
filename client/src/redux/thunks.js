@@ -1,7 +1,7 @@
 import axios from "axios";
 import {API_URL} from "../config";
 import {loadPost, thumbUp, thumbDown, loadPostsByRange} from "./actions/postsActions";
-import {startRequest, stopRequest, errorRequest, beginSetVotes, resetRequest} from "./actions/requestActions";
+import {startRequest, stopRequest, errorRequest, beginSetVotes, resetRequest, removeRequest} from "./actions/requestActions";
 import {setLogin, setUser, updateUserPost, getUser, addUserComment, removeUserPost} from "./actions/usersActions";
 import store from './store';
 import {checkUserPosts} from "../utils/functions";
@@ -195,6 +195,8 @@ export const removePostRequest = id => {
             await new Promise(resolve => setTimeout(resolve, 2000));
             await axios.delete(`${API_URL}/posts/remove/${id}`);
             dispatch(removeUserPost(id));
+            dispatch(removeRequest(true));
+            await setTimeout(() => dispatch(removeRequest(false)), 4000);
             dispatch(stopRequest());
         } catch (err) {
             dispatch(errorRequest(err.message))

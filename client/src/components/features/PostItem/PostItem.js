@@ -13,8 +13,7 @@ import './PostItem.scss';
 
 class PostItem extends React.Component {
     state = {
-        singlePost: "",
-        userPostCounter: this.props.amountUserPosts
+        singlePost: ""
     };
 
     componentDidMount() {
@@ -42,11 +41,11 @@ class PostItem extends React.Component {
     };
 
     render() {
-        const {singlePost, userPostCounter} = this.state;
-        const {request, user, isRandom, amountUserPosts} = this.props;
+        const {singlePost} = this.state;
+        const {request, user, isRandom} = this.props;
         const {randomHandling, removeHandling} = this;
 
-        if (userPostCounter !== amountUserPosts) {
+        if (request.remove) {
             return <Redirect to='/user'/>
         } else if ((!request.pending && request.success) || (request.votes)) {
             return (
@@ -102,8 +101,7 @@ PostItem.propTypes = {
     id: PropTypes.string,
     isRandom: PropTypes.bool.isRequired,
     presentPage: PropTypes.number.isRequired,
-    user: PropTypes.object.isRequired,
-    amountUserPosts: PropTypes.number.isRequired
+    user: PropTypes.object.isRequired
 };
 
 export default PostItem;
