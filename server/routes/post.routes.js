@@ -10,6 +10,6 @@ router.route('/posts').post(postController.addPost);
 router.route('/posts/comment').post(postController.addComment);
 router.route('/posts').put(postController.updatePost);
 router.route('/posts/:id/:isUp').put(postController.setThumb);
-router.route('/posts/remove/:id').delete(postController.removePost);
+router.route('/posts/remove/:id/:userId').delete(postController.removePost);
 
 module.exports = router;

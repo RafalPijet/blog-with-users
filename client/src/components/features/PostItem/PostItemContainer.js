@@ -8,7 +8,7 @@ import {getRequest} from "../../../redux/actions/requestActions";
 const mapDispatchToProps = dispatch => ({
     loadPost: id => dispatch(loadPostRequest(id)),
     randomPost: () => dispatch(randomPostRequest()),
-    removePost: id => dispatch(removePostRequest(id))
+    removePost: (id, userId) => dispatch(removePostRequest(id, userId))
 });
 
 const mapStateToProps = store => ({

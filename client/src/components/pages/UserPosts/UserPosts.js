@@ -5,7 +5,7 @@ import {getInitialPaginationPage, setInitialPage} from "../../../redux/actions/p
 import {getAmountUserPosts} from "../../../redux/actions/usersActions";
 import PageTitle from "../../common/PageTitle/PageTitle";
 import Posts from "../../features/Posts/PostsContainer";
-import PostsCounter from "../../features/PostsCounter/PostsCounter";
+import PostsCounter from "../../features/PostsCounter/PostsCounterContainer";
 import Alert from '../../common/Alert/Alert';
 
 class UserPosts extends React.Component {

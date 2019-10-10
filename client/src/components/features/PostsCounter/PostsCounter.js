@@ -1,8 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {getPosts} from "../../../redux/actions/postsActions";
-import {getRequest} from "../../../redux/actions/requestActions";
-import {getAmountUserPosts} from "../../../redux/actions/usersActions";
 
 class PostsCounter extends React.Component {
 
@@ -22,11 +19,13 @@ class PostsCounter extends React.Component {
         const {amount, request, amountUserPosts} = props;
 
         if (request.pending) {
-            this.setState({content: '- no posts -'})
+            this.setState({content: 'calculation...'})
         } else if (!request.userPosts && amount !== 0) {
             this.setState({content: amount})
         } else if (request.userPosts && amountUserPosts !== 0) {
             this.setState({content: amountUserPosts})
+        } else {
+            this.setState({content: '- no posts -'})
         }
     };
 
@@ -38,10 +37,4 @@ class PostsCounter extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    posts: getPosts(state),
-    request: getRequest(state),
-    amountUserPosts: getAmountUserPosts(state)
-});
-
-export default connect(mapStateToProps)(PostsCounter)
+export default PostsCounter;

@@ -187,13 +187,13 @@ export const addCommentToPost = payload => {
     }
 };
 
-export const removePostRequest = id => {
+export const removePostRequest = (id, userId) => {
     return async dispatch => {
         dispatch(startRequest());
 
         try {
             await new Promise(resolve => setTimeout(resolve, 2000));
-            await axios.delete(`${API_URL}/posts/remove/${id}`);
+            await axios.delete(`${API_URL}/posts/remove/${id}/${userId}`);
             dispatch(removeUserPost(id));
             dispatch(removeRequest(true));
             await setTimeout(() => dispatch(removeRequest(false)), 4000);

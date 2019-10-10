@@ -41,10 +41,10 @@ class PostItem extends React.Component {
     };
 
     confirmHandling = () => {
-        const {removePost} = this.props;
+        const {removePost, user} = this.props;
         const {id} = this.state.singlePost;
         this.setState({modal: false});
-        removePost(id);
+        removePost(id, user.id);
     };
 
     render() {

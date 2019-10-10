@@ -127,7 +127,35 @@ exports.addComment = async (req, res) => {
 exports.removePost = async (req, res) => {
 
     try {
-        res.status(200).json(await Post.deleteOne({id: req.params.id}))
+        let targetPost = null;
+        let index = null;
+        const checkTargetPost = () => new Promise(resolve => resolve(
+            User.findOne({id: req.params.userId})
+                .then(user => {
+                    user.posts.map(post => {
+
+                        if (post.id === req.params.id) {
+                            targetPost = post;
+                            index = user.posts.indexOf(post);
+                            user.posts.splice(index, 1);
+                            user.save();
+                        }
+                    })
+                })
+                .catch(() => res.status(400).send("Don't found user"))
+        ));
+        checkTargetPost()
+            .then(() => {
+
+                if (targetPost !== null) {
+                    targetPost.comments.map(comment => comment.remove());
+                    targetPost.remove()
+                        .then(() => res.status(200).end())
+                        .catch(() => res.status(500).end());
+                } else {
+                    res.status(400).send("Don't found post")
+                }
+            });
     } catch (err) {
         res.status(500).json(err);
     }
