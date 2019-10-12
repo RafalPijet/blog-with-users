@@ -12,7 +12,6 @@ export const loadPostRequest = id => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.get(`${API_URL}/posts/${id}`);
 
             if (res.data !== null) {
@@ -34,7 +33,6 @@ export const addPostRequest = post => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.post(`${API_URL}/posts`, post);
             dispatch(setUser(res.data));
             dispatch(stopRequest());
@@ -50,7 +48,6 @@ export const updatePostRequest = post => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.put(`${API_URL}/posts`, post);
             dispatch(updateUserPost(res.data));
             dispatch(stopRequest());
@@ -66,7 +63,6 @@ export const setThumbRequest = (id, isUp) => {
         dispatch(beginSetVotes());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.put(`${API_URL}/posts/${id}/${isUp}`);
 
             if (res.status === 200) {
@@ -85,7 +81,6 @@ export const randomPostRequest = () => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let post = await axios.get(`${API_URL}/posts/random`);
             dispatch(loadPost(post.data));
             dispatch(stopRequest());
@@ -103,7 +98,6 @@ export const loadPostsByRangeRequest = (page, postsPerPage) => {
         try {
             let start = Math.ceil((page - 1) * postsPerPage);
             let limit = postsPerPage;
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.get(`${API_URL}/posts/range/${start}/${limit}`);
             let payload = {
                 data: res.data.selectedPosts,
@@ -125,7 +119,6 @@ export const loadUserByLogin = login => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.get(`${API_URL}/users/login`, {params: {email: login.email}});
 
             if (res.data !== null) {
@@ -155,7 +148,6 @@ export const addUser = user => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             await axios.post(`${API_URL}/users/add`, user);
             dispatch(stopRequest());
         } catch (err) {
@@ -172,7 +164,6 @@ export const addCommentToPost = payload => {
         dispatch(beginSetVotes());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.post(`${API_URL}/posts/comment`, payload);
             dispatch(loadPost(res.data.post));
             let loggedUser = await getUser(store.getState());
@@ -192,7 +183,6 @@ export const removePostRequest = (id, userId) => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             await axios.delete(`${API_URL}/posts/remove/${id}/${userId}`);
             dispatch(removeUserPost(id));
             dispatch(removeRequest(true));

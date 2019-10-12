@@ -1,5 +1,5 @@
 module.exports = {
-    PORT: 7000,
-    DB: 'mongodb://localhost:27017/blog-app'
+    PORT: process.env.PORT || 7000,
+    DB: process.env.DB || 'mongodb://localhost:27017/blog-app'
 };
 

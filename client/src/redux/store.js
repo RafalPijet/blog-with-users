@@ -1,4 +1,4 @@
-import {createStore, combineReducers, applyMiddleware, compose} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
 import posts from './reducers/postsReducer';
 import request from './reducers/requestReducer';
 import users from './reducers/usersReducer';
@@ -10,9 +10,6 @@ const reducers = combineReducers({
     users
 });
 
-const store = createStore(reducers, compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    ));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 export default store;
