@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
+const sanitize = require('express-mongo-sanitize');
 const path = require('path');
 const config = require('./config');
 const postRouter = require('./routes/post.routes');
@@ -11,6 +12,7 @@ const loadTestData = require('./dataTest');
 const app = express();
 
 app.use(cors());
+app.use(sanitize());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use('/api', postRouter);
