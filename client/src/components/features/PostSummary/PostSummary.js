@@ -38,7 +38,7 @@ class PostSummary extends React.Component {
     };
 
     render() {
-        const {id, title, content, author, votes} = this.props;
+        const {id, title, content, author, votes, comments} = this.props;
         const {thumbHandling} = this;
         const {isBusy, isWorking} = this.state;
         return (
@@ -63,6 +63,7 @@ class PostSummary extends React.Component {
                         onClick={() => votes > 0 ? thumbHandling(id, false) : []}>
                     <FaThumbsDown/>
                 </Button>
+                <span>{`comments: ${comments.length}`}</span>
             </article>
         )
     }
