@@ -63,7 +63,7 @@ class PostSummary extends React.Component {
                         onClick={() => votes > 0 ? thumbHandling(id, false) : []}>
                     <FaThumbsDown/>
                 </Button>
-                <span>{`comments: ${comments.length}`}</span>
+                <span style={{cursor: 'default'}}>{`comments: ${comments.length}`}</span>
             </article>
         )
     }

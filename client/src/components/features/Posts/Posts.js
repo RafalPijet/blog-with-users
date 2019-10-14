@@ -29,8 +29,9 @@ class Posts extends React.Component {
         isUserPosts ? prepareUserPosts(page) : loadPosts(page, postsPerPage || 3);
     };
 
-    prepareUserPosts = page => {
+    prepareUserPosts = (page) => {
         const {postsPerPage, loadUserPosts, user} = this.props;
+
         let payload = {
             data: user.posts.slice((page - 1) * postsPerPage, (page - 1) * postsPerPage + postsPerPage),
             amount: user.posts.length,
@@ -41,14 +42,14 @@ class Posts extends React.Component {
     };
 
     render() {
-        const {posts, request, pages, presentPage, isActive, user, isUserPosts} = this.props;
+        const {posts, request, pages, presentPage, isActive, isUserPosts, user} = this.props;
         const {votesHandling, changePostsHandling} = this;
 
         if ((!request.pending && request.success && posts.length > 0) || request.votes ||
             (isUserPosts && user.posts.length !== 0)) {
             return (
                 <div>
-                    <PostsList user={user} posts={posts} votesHandling={votesHandling}
+                    <PostsList user={user} posts={isUserPosts ? user.posts : posts} votesHandling={votesHandling}
                                request={request}/>
                     <Pagination isActive={isActive} pages={pages}
                                 onPageChange={changePostsHandling} presentPage={presentPage}/>
