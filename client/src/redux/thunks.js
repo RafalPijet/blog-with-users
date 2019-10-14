@@ -119,7 +119,6 @@ export const loadUserByLogin = login => {
         dispatch(startRequest());
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
             let res = await axios.get(`${API_URL}/users/login`, {params: {email: login.email}});
 
             if (res.data !== null) {
