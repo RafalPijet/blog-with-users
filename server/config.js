@@ -1,4 +1,4 @@
 module.exports = {
-    PORT: process.env.PORT || 7000,
-    DB: process.env.DB || 'mongodb://localhost:27017/blog-app'
+    PORT: 7000,
+    DB: 'mongodb+srv://LopezPL:TechnoParty2204@cluster0-cpzdn.gcp.mongodb.net/blog?retryWrites=true&w=majority'
 };
